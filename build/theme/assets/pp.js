@@ -17,6 +17,13 @@
     var anims = [];
     function loop(el, frames, opts) { if (motion && el.animate) anims.push(el.animate(frames, opts)); }
 
+    /* ---------- split hero headline into words (each revealed in turn, as in the design) ---------- */
+    if (!editor) $$('.pp-split .elementor-heading-title').forEach(function (h) {
+      var t = h.textContent.trim();
+      h.setAttribute('aria-label', t);
+      h.innerHTML = t.split(/\s+/).map(function (w, i) { return '<span class="pp-hw pp-r-up pp-d' + Math.min(i, 9) + '" aria-hidden="true">' + w.replace(/</g, '&lt;') + '</span>'; }).join(' ');
+    });
+
     /* ---------- reveal on scroll ---------- */
     var OFF = { up: 'translateY(44px)', left: 'translateX(-70px)', right: 'translateX(70px)', zoom: 'scale(0.86)',
       tl: 'translate(-60px,-60px) scale(0.9)', bl: 'translate(-60px,60px) scale(0.9)', br: 'translate(60px,60px) scale(0.9)', ring: 'scale(0)' };
@@ -100,8 +107,9 @@
 
     /* ---------- scroll-driven effects: header shadow, word fill, parallax ---------- */
     var header = d.querySelector('.pp-header-pill');
-    var para = motion ? $$('[data-pp-parallax]') : [];
-    $$('.pp-parallax-bg').forEach(function (el) { if (motion) para.push(el); });
+    var PF = { 'pp-parallax-bg': 0.12, 'pp-par-up': 0.06, 'pp-par-down': -0.05 };
+    var para = motion ? $$('.pp-parallax-bg, .pp-par-up, .pp-par-down') : [];
+    para.forEach(function (el) { for (var k in PF) if (el.classList.contains(k)) el.setAttribute('data-pp-parallax', PF[k]); });
     var raf = 0;
     function onScroll() {
       cancelAnimationFrame(raf);
@@ -115,7 +123,7 @@
           words.forEach(function (w, i) { w.classList.toggle('is-on', i < n); });
         }
         para.forEach(function (el) {
-          var f = +(el.getAttribute('data-pp-parallax') || (el.classList.contains('pp-parallax-bg') ? 0.12 : 0));
+          var f = +(el.getAttribute('data-pp-parallax') || 0);
           var rr = el.getBoundingClientRect();
           var c = rr.top + rr.height / 2 - vh / 2;
           el.style.setProperty('--pp-py', (-c * f).toFixed(1) + 'px');
