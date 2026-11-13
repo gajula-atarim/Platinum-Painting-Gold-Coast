@@ -173,7 +173,7 @@
       var section = wrap.closest('.pp-testimonials') || d;
       var prev = section.querySelector('.pp-tprev a, .pp-tprev .elementor-button');
       var next = section.querySelector('.pp-tnext a, .pp-tnext .elementor-button');
-      var dotsWrap = d.createElement('div'); dotsWrap.className = 'pp-tdots'; wrap.appendChild(dotsWrap);
+      var dotsWrap = d.createElement('div'); dotsWrap.className = 'pp-tdots'; wrap.parentNode.insertBefore(dotsWrap, wrap.nextSibling);
       var idx = 0, pv = 3;
       function avail() { var p = wrap.parentElement; return p ? p.clientWidth + 22 : wrap.clientWidth; }
       function perView() { var w = avail(); return w < 640 ? 1 : w < 1000 ? 2 : 3; }

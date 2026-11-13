@@ -348,3 +348,10 @@ body{overflow-x:hidden;-webkit-font-smoothing:antialiased;color:var(--pp-ink)}
   .pp-header-pill{padding-left:12px!important}
 }
 .pp-tslider{width:calc(100% + 22px)!important;max-width:calc(100% + 22px)!important;align-self:stretch!important;min-width:0!important;flex:none!important}
+
+/* ---------- QA round 4 ---------- */
+.pp-tdots{display:flex!important;gap:8px;justify-content:center;margin-top:0!important;width:100%}
+.pp-tdots button{display:block!important;height:8px!important;width:8px!important;min-width:0!important;border-radius:999px!important;border:0!important;padding:0!important;background:rgba(255,255,255,.35)!important;cursor:pointer;transition:all .3s}
+.pp-tdots button.is-on{width:28px!important;background:#fff!important}
+.pp-tcap{flex-wrap:nowrap!important}
+.pp-tcap>.e-con{width:auto!important;flex:1 1 auto!important;min-width:0}
