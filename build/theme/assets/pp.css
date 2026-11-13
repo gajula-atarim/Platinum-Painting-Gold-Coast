@@ -452,3 +452,6 @@ html,body{overflow-x:clip!important}
   .pp-hero-cans{right:-3%!important;bottom:-5%!important;width:115px!important;height:110px!important}
   .pp-hero-cans-img,.pp-hero-cans-img img{width:115px!important}
 }
+
+/* ---------- Mobile header: tighter gap between phone and menu buttons ---------- */
+@media (max-width:767px){.pp-header-pill>.e-con-inner{gap:6px!important;column-gap:6px!important}}
