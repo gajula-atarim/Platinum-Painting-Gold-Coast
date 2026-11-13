@@ -45,3 +45,7 @@ Hero (H1 word reveal, quarter-circle image grid, rings, pulse hub, floating cans
 4. Before/after uses one photo twice with a CSS "weathered" filter (as in the design); both images share one alt text.
 5. Colour-contrast flag: the word-fill text starts light grey by design; Hello theme skip link flagged as not focusable.
 6. Search engine visibility is off (staging) – switch on before launch.
+
+## Post-build updates
+- Site title set to **Platinum Painting Gold Coast** and tagline to **The Platinum Standard In Painting** (Settings › General).
+- Site icon (favicon): a white Cinzel "P" monogram on brand blue #1359AC (`design/favicon/pp-site-icon-512.png`, media ID 54). The brand kit had no square icon, so you picked this new mark, derived from the brand. Verified icon + apple-touch-icon tags on the live homepage.
