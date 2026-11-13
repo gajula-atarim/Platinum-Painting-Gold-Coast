@@ -49,3 +49,4 @@ Hero (H1 word reveal, quarter-circle image grid, rings, pulse hub, floating cans
 ## Post-build updates
 - Site title set to **Platinum Painting Gold Coast** and tagline to **The Platinum Standard In Painting** (Settings › General).
 - Site icon (favicon): a white Cinzel "P" monogram on brand blue #1359AC (`design/favicon/pp-site-icon-512.png`, media ID 54). The brand kit had no square icon, so you picked this new mark, derived from the brand. Verified icon + apple-touch-icon tags on the live homepage.
+- Responsive round 5 (tablet/mobile): hero card/gradient on mobile, decorations hidden where they overlapped headings, no orphan cards on tablet (offers, weather cards), 2-column gallery on tablet, contact cards keep icon beside text, tighter mobile service cards, 4-column footer at 1024px. Verified live at 360px and previewed at 390/768/1024px (Chromium only).
