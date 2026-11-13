@@ -305,3 +305,32 @@ body{overflow-x:hidden;-webkit-font-smoothing:antialiased;color:var(--pp-ink)}
   .pp-badge::before{animation:none}
   .pp-ttrack,.pp-lift,.pp-svc{transition:none}
 }
+
+/* ---------- QA round 1 fixes ---------- */
+@media (min-width:1025px){.pp-hero-copy{flex:0 0 calc(50% - 28px)!important}}
+.pp-hero-lead{max-width:500px!important}
+.pp-svc-title{max-width:760px!important}
+.pp-svc-text{max-width:300px!important}
+.pp-ba-lead{max-width:520px!important}
+.pp-quote-lead{max-width:480px!important}
+.pp-ftag{max-width:280px!important}
+.pp-cc-grid{max-width:560px!important}
+.pp-ab-card{max-width:220px!important}
+.pp-pill{align-self:flex-start!important}
+.pp-pill--lg{align-self:center!important}
+.pp-gal-head>.e-con,.pp-t-head>.e-con,.pp-fcta>.e-con,.pp-gal-head>.elementor-widget{width:auto!important;flex:0 1 auto!important}
+.pp-ba-panel,.pp-t-panel,.pp-fpanel{max-width:1360px!important;margin-left:auto!important;margin-right:auto!important}
+.pp-offers>.e-con-inner{grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr))!important;grid-template-rows:none!important}
+.pp-threats>.e-con-inner{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))!important;grid-template-rows:none!important}
+.pp-svc-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr))!important;grid-template-rows:none!important}
+.pp-cc-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr))!important;grid-template-rows:none!important}
+.pp-fgrid{grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr))!important;grid-template-rows:none!important}
+.pp-ba-head{grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr))!important;grid-template-rows:none!important}
+.pp-tslider{overflow:hidden!important}
+.pp-ttrack{max-width:none!important}
+.pp-tcard{min-width:0}
+@media (max-width:1024px){
+  .pp-nav{order:3!important;flex:0 0 auto!important;width:auto!important}
+  .pp-hright{order:2!important}
+  .pp-logo{order:1!important;margin-right:auto}
+}
