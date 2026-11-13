@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@1,500&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F3F5F8;color:#0E0E10;font-family:'Figtree',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#1359AC;text-decoration:underline;text-underline-offset:3px}
+a:hover{color:#0B2B55}
+*{box-sizing:border-box}
+</style>
+</helmet>
+
+<div style="max-width:1400px;margin:0 auto;padding:32px 24px 96px;display:flex;flex-direction:column;gap:32px">
+
+<section data-screen-label="Sitemap" style="background:#FFFFFF;border-radius:4px;padding:56px clamp(24px,5vw,64px);display:flex;flex-direction:column;gap:48px">
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;border-bottom:1px solid #C8CDD3;padding-bottom:20px">
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <span style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;font-weight:700;color:#1359AC">Platinum Painting Gold Coast · Website</span>
+      <h1 style="margin:0;font-family:'Cinzel',serif;font-weight:600;font-size:clamp(30px,4vw,44px);letter-spacing:0.03em">Sitemap</h1>
+    </div>
+    <img src="assets/logo-transparent.png" alt="Platinum Painting" style="height:56px;width:auto">
+  </div>
+
+  <div style="display:flex;flex-direction:column;align-items:center">
+    <div style="background:#1359AC;color:#FFFFFF;padding:20px 28px;width:min(420px,100%);display:flex;flex-direction:column;gap:12px">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px">
+        <span style="font-family:'Cinzel',serif;font-size:24px;font-weight:600">Home</span>
+        <span style="font-size:12px;color:#E3ECF7">/</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:6px;font-size:14px;line-height:1.4;color:#E3ECF7">
+        <sc-for list="{{ home }}" as="h" hint-placeholder-count="7"><span>{{ h }}</span></sc-for>
+      </div>
+    </div>
+    <div style="width:2px;height:32px;background:#1359AC"></div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:20px;border-top:2px solid #1359AC;padding-top:0">
+    <sc-for list="{{ pages }}" as="p" hint-placeholder-count="5">
+      <div style="display:flex;flex-direction:column;align-items:stretch">
+        <div style="width:2px;height:24px;background:#1359AC;align-self:center"></div>
+        <div style="border:1px solid #C8CDD3;border-top:4px solid #0E0E10;display:flex;flex-direction:column;flex:1">
+          <div style="padding:18px 20px 14px;display:flex;flex-direction:column;gap:4px;border-bottom:1px solid #C8CDD3">
+            <span style="font-family:'Cinzel',serif;font-size:20px;font-weight:600">{{ p.name }}</span>
+            <span style="font-size:12px;color:#1359AC;font-weight:600">{{ p.url }}</span>
+          </div>
+          <div style="padding:14px 20px;font-size:14px;line-height:1.45;color:#3A3D42">{{ p.purpose }}</div>
+          <div style="padding:0 20px 20px;display:flex;flex-direction:column;gap:6px">
+            <sc-for list="{{ p.sections }}" as="s" hint-placeholder-count="5">
+              <div style="display:flex;gap:10px;align-items:baseline;font-size:14px;line-height:1.4">
+                <span style="width:6px;height:6px;background:#1359AC;flex:none;transform:translateY(-2px)"></span><span>{{ s }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:20px">
+    <div style="background:#F3F5F8;padding:24px;display:flex;flex-direction:column;gap:12px">
+      <span style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;font-weight:700;color:#1359AC">Global header · every page</span>
+      <span style="font-size:15px;line-height:1.5">Logo · Home · About Us · Services · Gallery · Testimonials · Contact Us · Phone number · <b>Get a Free Quote</b> button</span>
+    </div>
+    <div style="background:#0B2B55;color:#FFFFFF;padding:24px;display:flex;flex-direction:column;gap:12px">
+      <span style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;font-weight:700;color:#C8CDD3">Global footer · every page</span>
+      <span style="font-size:15px;line-height:1.5;color:#E3ECF7">White logo and tagline · Services list · Contact details · Service area · Licence number · Social links · Privacy policy</span>
+    </div>
+  </div>
+</section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      home: [
+        'Hero: protective coating message + Get a Free Quote',
+        'Service highlights (6 featured services)',
+        'Why paint is protection: sun, salt, storms',
+        'Featured gallery projects',
+        'Testimonial highlights',
+        'Service area: Gold Coast suburbs',
+        'Quote call to action'
+      ],
+      pages: [
+        { name: 'About Us', url: '/about', purpose: 'Who we are and how we work.', sections: ['Company story and history', 'Mission', 'Values: Protection, Precision, Local knowledge, Straight talk', 'Our process: prep, prime, protect', 'Licences, insurance and warranties', 'Call to action'] },
+        { name: 'Services', url: '/services', purpose: 'Overview of everything we offer, each framed by what it protects against.', sections: ['Interior House Painting', 'Exterior House Painting', 'Commercial Painting', 'Strata / Body Corp Painting', 'Roof Restorations', 'Render Coatings', 'Also: timber decks and pergolas, colour consultations', 'Call to action'] },
+        { name: 'Gallery', url: '/gallery', purpose: 'Photos and videos of completed work.', sections: ['Filter by service', 'Photo grid with project captions', 'Before and after comparisons', 'Video showcase', 'Call to action'] },
+        { name: 'Testimonials', url: '/testimonials', purpose: 'Customer reviews that build trust.', sections: ['Rating summary', 'Review cards with name, suburb and service', 'Google reviews link', 'Call to action'] },
+        { name: 'Contact Us', url: '/contact', purpose: 'Easy ways to get a quote or ask a question.', sections: ['Phone and email', 'Contact / quote form', 'Service area map', 'Business hours'] }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

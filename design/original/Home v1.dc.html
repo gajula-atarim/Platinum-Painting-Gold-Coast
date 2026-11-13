@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+body{margin:0;background:#FFFFFF;color:#0E0E10;font-family:'Figtree',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#1359AC;text-decoration:none}
+a:hover{color:#0B2B55}
+*{box-sizing:border-box}
+</style>
+</helmet>
+
+<div data-screen-label="Home" style="display:flex;flex-direction:column">
+
+<!-- top bar -->
+<div style="background:#0B2B55;color:#E3ECF7;font-size:13px">
+  <div style="max-width:1280px;margin:0 auto;padding:10px clamp(20px,4vw,48px);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
+    <span>Servicing the Gold Coast and surrounds</span>
+    <div style="display:flex;gap:24px;flex-wrap:wrap"><span>0400 000 000</span><span>hello@platinumpainting.com.au</span></div>
+  </div>
+</div>
+
+<!-- header -->
+<header style="background:#FFFFFF;border-bottom:1px solid #C8CDD3;position:sticky;top:0;z-index:10">
+  <div style="max-width:1280px;margin:0 auto;padding:14px clamp(20px,4vw,48px);display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap">
+    <img src="assets/logo-transparent.png" alt="Platinum Painting Gold Coast" style="height:52px;width:auto;display:block">
+    <nav style="display:flex;align-items:center;gap:28px;flex-wrap:wrap;font-size:15px;font-weight:500">
+      <a href="#" style="color:#1359AC;font-weight:600">Home</a>
+      <a href="#" style="color:#0E0E10" style-hover="color:#1359AC">About Us</a>
+      <a href="#" style="color:#0E0E10" style-hover="color:#1359AC">Services</a>
+      <a href="#" style="color:#0E0E10" style-hover="color:#1359AC">Gallery</a>
+      <a href="#" style="color:#0E0E10" style-hover="color:#1359AC">Testimonials</a>
+      <a href="#" style="color:#0E0E10" style-hover="color:#1359AC">Contact Us</a>
+      <a href="#quote" style="background:#1359AC;color:#FFFFFF;padding:12px 20px;font-weight:600" style-hover="background:#0B2B55;color:#FFFFFF">Get a Free Quote</a>
+    </nav>
+  </div>
+</header>
+
+<!-- hero split -->
+<sc-if value="{{ heroSplit }}" hint-placeholder-val="{{ true }}">
+<section style="background:#FFFFFF">
+  <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr))">
+    <div style="padding:clamp(48px,7vw,96px) clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:24px;justify-content:center">
+      <span style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;font-weight:700;color:#1359AC">Gold Coast Painters · Residential · Commercial · Strata</span>
+      <h1 style="margin:0;font-family:'Cinzel',serif;font-size:clamp(36px,4.8vw,60px);line-height:1.06;font-weight:600;text-wrap:balance">More Than Looks. Protection That Lasts.</h1>
+      <p style="margin:0;font-size:18px;line-height:1.6;color:#3A3D42;max-width:500px;text-wrap:pretty">Painting is about more than looks. It is a protective coating that helps surfaces last longer in all weather conditions. We prepare every surface properly and use coatings made for Gold Coast sun, salt air and storms.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a href="#quote" style="background:#1359AC;color:#FFFFFF;padding:16px 28px;font-weight:600;font-size:16px" style-hover="background:#0B2B55;color:#FFFFFF">Get a Free Quote</a>
+        <a href="#work" style="border:1.5px solid #0E0E10;color:#0E0E10;padding:14.5px 26px;font-weight:600;font-size:16px" style-hover="background:#0E0E10;color:#FFFFFF">View Our Work</a>
+      </div>
+      <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:24px;color:#1359AC">The Platinum Standard In Painting</span>
+    </div>
+    <div style="min-height:520px;position:relative"><image-slot id="home-hero" shape="rect" placeholder="Hero: freshly painted Gold Coast home"></image-slot></div>
+  </div>
+</section>
+</sc-if>
+<!-- hero full-bleed -->
+<sc-if value="{{ heroFull }}" hint-placeholder-val="{{ false }}">
+<section style="position:relative;min-height:640px;display:flex;align-items:flex-end;background:#0B2B55">
+  <div style="position:absolute;inset:0"><image-slot id="home-hero-full" shape="rect" placeholder="Hero: freshly painted Gold Coast home"></image-slot></div>
+  <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(11,43,85,0.92) 0%,rgba(11,43,85,0.75) 45%,rgba(11,43,85,0) 80%);pointer-events:none"></div>
+  <div style="position:relative;max-width:1280px;width:100%;margin:0 auto;padding:clamp(48px,7vw,96px) clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:24px;color:#FFFFFF;pointer-events:none">
+    <span style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;font-weight:700;color:#E3ECF7">Gold Coast Painters · Residential · Commercial · Strata</span>
+    <h1 style="margin:0;font-family:'Cinzel',serif;font-size:clamp(36px,5vw,64px);line-height:1.06;font-weight:600;max-width:680px;text-wrap:balance">More Than Looks. Protection That Lasts.</h1>
+    <p style="margin:0;font-size:18px;line-height:1.6;color:#E3ECF7;max-width:540px">Painting is about more than looks. It is a protective coating that helps surfaces last longer in all weather conditions.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;pointer-events:auto">
+      <a href="#quote" style="background:#FFFFFF;color:#1359AC;padding:16px 28px;font-weight:600;font-size:16px" style-hover="background:#E3ECF7;color:#0B2B55">Get a Free Quote</a>
+      <a href="#work" style="border:1.5px solid #FFFFFF;color:#FFFFFF;padding:14.5px 26px;font-weight:600;font-size:16px" style-hover="background:#FFFFFF;color:#0B2B55">View Our Work</a>
+    </div>
+  </div>
+</section>
+</sc-if>
+
+<!-- trust strip -->
+<section style="background:#1359AC;color:#FFFFFF">
+  <div style="max-width:1280px;margin:0 auto;padding:22px clamp(20px,4vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:16px;font-size:15px;font-weight:600">
+    <span>Fully licensed and insured</span><span>Written, itemised quotes</span><span>Coastal-rated coating systems</span><span>Clean, tidy sites every day</span>
+  </div>
+</section>
+
+<!-- services -->
+<section style="background:#FFFFFF">
+  <div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:48px">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap">
+      <div style="display:flex;flex-direction:column;gap:14px;max-width:640px">
+        <span style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;font-weight:700;color:#1359AC">Our Services</span>
+        <h2 style="margin:0;font-family:'Cinzel',serif;font-size:clamp(28px,3.4vw,42px);line-height:1.12;font-weight:600">Every Surface, Properly Protected</h2>
+      </div>
+      <a href="#" style="font-weight:600;font-size:15px;border-bottom:1.5px solid #1359AC;padding-bottom:3px">All services</a>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:24px">
+      <sc-for list="{{ services }}" as="s" hint-placeholder-count="6">
+        <a href="#" style="display:flex;flex-direction:column;color:#0E0E10;border:1px solid #C8CDD3;background:#FFFFFF" style-hover="border-color:#1359AC;box-shadow:0 12px 32px rgba(11,43,85,0.12);color:#0E0E10">
+          <div style="aspect-ratio:16/10;position:relative"><image-slot id="{{ s.img }}" shape="rect" placeholder="{{ s.ph }}"></image-slot></div>
+          <div style="padding:24px;display:flex;flex-direction:column;gap:10px;flex:1">
+            <span style="font-family:'Cinzel',serif;font-size:14px;color:#1359AC;font-weight:700">{{ s.n }}</span>
+            <span style="font-family:'Cinzel',serif;font-size:22px;font-weight:600;line-height:1.2">{{ s.name }}</span>
+            <span style="font-size:15px;line-height:1.55;color:#3A3D42">{{ s.line }}</span>
+            <span style="margin-top:auto;padding-top:8px;font-size:14px;font-weight:600;color:#1359AC">Learn more →</span>
+          </div>
+        </a>
+      </sc-for>
+    </div>
+    <p style="margin:0;font-size:15px;color:#3A3D42">We also restore timber decks and pergolas and offer colour consultations.</p>
+  </div>
+</section>
+
+<!-- protection -->
+<section style="background:#0B2B55;color:#FFFFFF">
+  <div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(40px,6vw,80px);align-items:start">
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <span style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;font-weight:700;color:#C8CDD3">Why It Matters</span>
+      <h2 style="margin:0;font-family:'Cinzel',serif;font-size:clamp(28px,3.4vw,42px);line-height:1.12;font-weight:600">Paint Is Your Building's First Line of Defence</h2>
+      <p style="margin:0;font-size:17px;line-height:1.65;color:#E3ECF7;text-wrap:pretty">A good coating does more than add colour. It seals timber, render and roofing against moisture, reflects heat and slows the damage caused by UV and salt. Done properly, it saves you money on repairs and keeps your property looking cared for years longer.</p>
+      <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:26px;color:#FFFFFF;margin-top:8px">Prepare. Prime. Protect.</span>
+    </div>
+    <div style="display:flex;flex-direction:column">
+      <sc-for list="{{ threats }}" as="t" hint-placeholder-count="3">
+        <div style="display:grid;grid-template-columns:56px 1fr;gap:20px;padding:28px 0;border-top:1px solid rgba(255,255,255,0.2)">
+          <span style="font-family:'Cinzel',serif;font-size:30px;color:#C8CDD3;line-height:1">{{ t.n }}</span>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <span style="font-family:'Cinzel',serif;font-size:22px;font-weight:600">{{ t.title }}</span>
+            <span style="font-size:15px;line-height:1.6;color:#E3ECF7">{{ t.body }}</span>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- gallery -->
+<section id="work" style="background:#F3F5F8">
+  <div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:40px">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap">
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <span style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;font-weight:700;color:#1359AC">Recent Projects</span>
+        <h2 style="margin:0;font-family:'Cinzel',serif;font-size:clamp(28px,3.4vw,42px);line-height:1.12;font-weight:600">Our Work Across the Coast</h2>
+      </div>
+      <a href="#" style="font-weight:600;font-size:15px;border-bottom:1.5px solid #1359AC;padding-bottom:3px">View full gallery</a>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:20px">
+      <sc-for list="{{ projects }}" as="p" hint-placeholder-count="3">
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div style="aspect-ratio:4/5;position:relative"><image-slot id="{{ p.img }}" shape="rect" placeholder="Project photo"></image-slot></div>
+          <div style="display:flex;flex-direction:column;gap:4px">
+            <span style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:#1359AC">{{ p.type }}</span>
+            <span style="font-family:'Cinzel',serif;font-size:20px;font-weight:600">{{ p.place }}</span>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- testimonials -->
+<section style="background:#FFFFFF">
+  <div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:48px">
+    <div style="display:flex;flex-direction:column;gap:14px;align-items:center;text-align:center">
+      <span style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;font-weight:700;color:#1359AC">Testimonials</span>
+      <h2 style="margin:0;font-family:'Cinzel',serif;font-size:clamp(28px,3.4vw,42px);line-height:1.12;font-weight:600">What Our Customers Say</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:24px">
+      <sc-for list="{{ reviews }}" as="r" hint-placeholder-count="3">
+        <figure style="margin:0;background:#E3ECF7;padding:32px;display:flex;flex-direction:column;gap:24px;justify-content:space-between">
+          <blockquote style="margin:0;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:24px;line-height:1.3;color:#0B2B55">"{{ r.quote }}"</blockquote>
+          <figcaption style="display:flex;flex-direction:column;gap:2px;font-size:14px">
+            <b style="font-size:15px">{{ r.name }}</b><span style="color:#3A3D42">{{ r.meta }}</span>
+          </figcaption>
+        </figure>
+      </sc-for>
+    </div>
+    <div style="display:flex;justify-content:center"><a href="#" style="font-weight:600;font-size:15px;border-bottom:1.5px solid #1359AC;padding-bottom:3px">Read all reviews</a></div>
+  </div>
+</section>
+
+<!-- service area -->
+<section style="background:#F3F5F8;border-top:1px solid #C8CDD3">
+  <div style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,88px) clamp(20px,4vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:40px;align-items:center">
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <span style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;font-weight:700;color:#1359AC">Service Area</span>
+      <h2 style="margin:0;font-family:'Cinzel',serif;font-size:clamp(26px,3vw,36px);line-height:1.15;font-weight:600">Local to the Gold Coast</h2>
+      <p style="margin:0;font-size:16px;line-height:1.6;color:#3A3D42;max-width:460px">We paint homes, businesses and strata buildings from Coolangatta to Coomera. Not sure if we cover your suburb? Give us a call.</p>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:10px">
+      <sc-for list="{{ suburbs }}" as="sb" hint-placeholder-count="12">
+        <span style="background:#FFFFFF;border:1px solid #C8CDD3;padding:9px 14px;font-size:14px;font-weight:500">{{ sb }}</span>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="quote" style="background:#1359AC;color:#FFFFFF">
+  <div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,104px) clamp(20px,4vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:48px;align-items:start">
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <h2 style="margin:0;font-family:'Cinzel',serif;font-size:clamp(30px,3.8vw,46px);line-height:1.1;font-weight:600">Protect Your Property Before the Next Season Hits</h2>
+      <p style="margin:0;font-size:17px;line-height:1.6;color:#E3ECF7;max-width:480px">Tell us about your project and we'll arrange a free on-site inspection and a written, itemised quote.</p>
+      <div style="display:flex;flex-direction:column;gap:6px;font-size:17px;font-weight:600;margin-top:8px"><span>0400 000 000</span><span>hello@platinumpainting.com.au</span></div>
+    </div>
+    <div style="background:#FFFFFF;color:#0E0E10;padding:clamp(24px,3vw,36px);display:flex;flex-direction:column;gap:16px">
+      <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-direction:column;gap:10px;padding:24px 0">
+          <span style="font-family:'Cinzel',serif;font-size:24px;font-weight:600">Thanks, we've got it.</span>
+          <span style="font-size:15px;color:#3A3D42;line-height:1.55">We'll be in touch within one business day to book your inspection.</span>
+        </div>
+      </sc-if>
+      <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:12px">
+          <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600">Name<input style="font:inherit;font-weight:400;font-size:15px;padding:12px;border:1px solid #C8CDD3;outline-color:#1359AC"></label>
+          <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600">Phone<input style="font:inherit;font-weight:400;font-size:15px;padding:12px;border:1px solid #C8CDD3;outline-color:#1359AC"></label>
+        </div>
+        <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600">Email<input type="email" style="font:inherit;font-weight:400;font-size:15px;padding:12px;border:1px solid #C8CDD3;outline-color:#1359AC"></label>
+        <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600">Service
+          <select style="font:inherit;font-weight:400;font-size:15px;padding:12px;border:1px solid #C8CDD3;background:#FFFFFF;outline-color:#1359AC">
+            <option>Interior House Painting</option><option>Exterior House Painting</option><option>Commercial Painting</option><option>Strata / Body Corp Painting</option><option>Roof Restorations</option><option>Render Coatings</option><option>Timber Decks &amp; Pergolas</option><option>Colour Consultation</option>
+          </select>
+        </label>
+        <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600">Project details<textarea rows="3" style="font:inherit;font-weight:400;font-size:15px;padding:12px;border:1px solid #C8CDD3;resize:vertical;outline-color:#1359AC"></textarea></label>
+        <button onClick="{{ submit }}" style="font:inherit;background:#0E0E10;color:#FFFFFF;border:none;padding:16px;font-weight:600;font-size:16px;cursor:pointer" style-hover="background:#0B2B55">Request My Free Quote</button>
+      </sc-if>
+    </div>
+  </div>
+</section>
+
+<!-- footer -->
+<footer style="background:#0E0E10;color:#C8CDD3">
+  <div style="max-width:1280px;margin:0 auto;padding:64px clamp(20px,4vw,48px) 32px;display:flex;flex-direction:column;gap:48px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:40px">
+      <div style="display:flex;flex-direction:column;gap:16px;grid-column:span 1">
+        <img src="assets/logo-white.png" alt="Platinum Painting Gold Coast" style="width:220px;max-width:100%;height:auto">
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;font-size:14px">
+        <span style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;font-weight:700;color:#FFFFFF;margin-bottom:6px">Services</span>
+        <span>Interior House Painting</span><span>Exterior House Painting</span><span>Commercial Painting</span><span>Strata / Body Corp Painting</span><span>Roof Restorations</span><span>Render Coatings</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;font-size:14px">
+        <span style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;font-weight:700;color:#FFFFFF;margin-bottom:6px">Company</span>
+        <span>About Us</span><span>Gallery</span><span>Testimonials</span><span>Contact Us</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;font-size:14px">
+        <span style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;font-weight:700;color:#FFFFFF;margin-bottom:6px">Contact</span>
+        <span>0400 000 000</span><span>hello@platinumpainting.com.au</span><span>Gold Coast, QLD</span><span>QBCC Licence 0000000</span>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;border-top:1px solid #2A2C30;padding-top:24px;font-size:13px;color:#8A8F96">
+      <span>© 2026 Platinum Painting Gold Coast</span>
+      <div style="display:flex;gap:20px"><span>Privacy Policy</span><span>Facebook</span><span>Instagram</span></div>
+    </div>
+  </div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;heroStyle&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Split&quot;,&quot;Full-bleed&quot;],&quot;default&quot;:&quot;Split&quot;,&quot;tsType&quot;:&quot;'Split'|'Full-bleed'&quot;}}">
+class Component extends DCLogic {
+  state = { sent: false };
+  renderVals() {
+    const hero = this.props.heroStyle ?? 'Split';
+    return {
+      heroSplit: hero === 'Split', heroFull: hero === 'Full-bleed',
+      sent: this.state.sent, notSent: !this.state.sent,
+      submit: () => this.setState({ sent: true }),
+      services: [
+        { n: '01', img: 'svc-interior', ph: 'Interior painting', name: 'Interior House Painting', line: 'Washable, low-odour finishes that resist scuffs, moisture and everyday wear.' },
+        { n: '02', img: 'svc-exterior', ph: 'Exterior painting', name: 'Exterior House Painting', line: 'Coatings rated for UV, salt air and summer storms, applied over properly prepared surfaces.' },
+        { n: '03', img: 'svc-commercial', ph: 'Commercial painting', name: 'Commercial Painting', line: 'Durable, specified finishes scheduled around your trading hours.' },
+        { n: '04', img: 'svc-strata', ph: 'Strata building', name: 'Strata / Body Corp Painting', line: 'Planned repaint programs that protect shared buildings and keep maintenance on budget.' },
+        { n: '05', img: 'svc-roof', ph: 'Roof restoration', name: 'Roof Restorations', line: 'Cleaning, repairs and membrane coatings that seal out water and reflect heat.' },
+        { n: '06', img: 'svc-render', ph: 'Render coating', name: 'Render Coatings', line: 'Flexible, breathable systems that bridge hairline cracks and keep render weathertight.' }
+      ],
+      threats: [
+        { n: 'I', title: 'Sun', body: 'Strong Queensland UV breaks down unprotected surfaces, causing chalking, fading and cracking. We use UV-stable coatings that hold their colour.' },
+        { n: 'II', title: 'Salt Air', body: 'Coastal salt speeds up corrosion on metal and wears down finishes. The right primers and topcoats slow it right down.' },
+        { n: 'III', title: 'Storms', body: 'Heavy summer rain finds every gap. Sealed timber, render and roofing keep water out and stop rot and mould before they start.' }
+      ],
+      projects: [
+        { img: 'proj-1', type: 'Exterior Repaint', place: 'Burleigh Heads' },
+        { img: 'proj-2', type: 'Roof Restoration', place: 'Robina' },
+        { img: 'proj-3', type: 'Strata Repaint', place: 'Broadbeach' }
+      ],
+      reviews: [
+        { quote: 'The prep work was thorough and the finish is spotless. The team left the place cleaner than they found it.', name: 'Customer Name', meta: 'Exterior painting · Suburb' },
+        { quote: 'Our roof had leaked for two seasons. Since the restoration we haven’t had a drop come through.', name: 'Customer Name', meta: 'Roof restoration · Suburb' },
+        { quote: 'Clear quote, finished on schedule and minimal disruption for residents. We’ll use them again.', name: 'Strata Manager', meta: 'Strata painting · Suburb' }
+      ],
+      suburbs: ['Coolangatta', 'Palm Beach', 'Burleigh Heads', 'Miami', 'Broadbeach', 'Surfers Paradise', 'Southport', 'Robina', 'Varsity Lakes', 'Nerang', 'Hope Island', 'Coomera']
+    };
+  }
+}
+</script>
+</body>
+</html>

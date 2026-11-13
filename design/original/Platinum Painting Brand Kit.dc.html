@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500;1,600&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+body{margin:0;background:#F3F5F8;color:#0E0E10;font-family:'Figtree',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#1359AC;text-decoration:underline;text-underline-offset:3px}
+a:hover{color:#0B2B55}
+*{box-sizing:border-box}
+</style>
+</helmet>
+
+<div style="max-width:1240px;margin:0 auto;padding:32px 24px 96px;display:flex;flex-direction:column;gap:32px">
+
+<!-- COVER -->
+<sc-if value="{{ coverBlue }}" hint-placeholder-val="{{ true }}">
+<section data-screen-label="01 Cover" style="background:#1359AC;color:#FFFFFF;border-radius:4px;padding:56px clamp(24px,6vw,80px);min-height:560px;display:flex;flex-direction:column;justify-content:space-between;gap:48px">
+  <div style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;letter-spacing:0.16em;text-transform:uppercase;font-weight:600">
+    <span>Brand Guidelines</span><span>Version 1.0 · November 2026</span>
+  </div>
+  <img src="assets/logo-white.png" alt="Platinum Painting Gold Coast" style="width:min(620px,100%);height:auto;display:block">
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap">
+    <p style="margin:0;max-width:520px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:30px;line-height:1.25;text-wrap:pretty">Painting is about more than looks. It is a protective coating that helps surfaces last longer in all weather conditions.</p>
+    <span style="font-size:13px;letter-spacing:0.16em;text-transform:uppercase;font-weight:600">Gold Coast, QLD</span>
+  </div>
+</section>
+</sc-if>
+<sc-if value="{{ coverInk }}" hint-placeholder-val="{{ false }}">
+<section data-screen-label="01 Cover" style="background:#0E0E10;color:#FFFFFF;border-radius:4px;padding:56px clamp(24px,6vw,80px);min-height:560px;display:flex;flex-direction:column;justify-content:space-between;gap:48px">
+  <div style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;letter-spacing:0.16em;text-transform:uppercase;font-weight:600;color:#C8CDD3">
+    <span>Brand Guidelines</span><span>Version 1.0 · November 2026</span>
+  </div>
+  <img src="assets/logo-white.png" alt="Platinum Painting Gold Coast" style="width:min(620px,100%);height:auto;display:block">
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap">
+    <p style="margin:0;max-width:520px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:30px;line-height:1.25;text-wrap:pretty">Painting is about more than looks. It is a protective coating that helps surfaces last longer in all weather conditions.</p>
+    <span style="font-size:13px;letter-spacing:0.16em;text-transform:uppercase;font-weight:600;color:#C8CDD3">Gold Coast, QLD</span>
+  </div>
+</section>
+</sc-if>
+<sc-if value="{{ coverWhite }}" hint-placeholder-val="{{ false }}">
+<section data-screen-label="01 Cover" style="background:#FFFFFF;color:#0E0E10;border-radius:4px;padding:56px clamp(24px,6vw,80px);min-height:560px;display:flex;flex-direction:column;justify-content:space-between;gap:48px;border-top:8px solid #1359AC">
+  <div style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;letter-spacing:0.16em;text-transform:uppercase;font-weight:600;color:#1359AC">
+    <span>Brand Guidelines</span><span>Version 1.0 · November 2026</span>
+  </div>
+  <img src="assets/logo.png" alt="Platinum Painting Gold Coast" style="width:min(620px,100%);height:auto;display:block">
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap">
+    <p style="margin:0;max-width:520px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:30px;line-height:1.25;text-wrap:pretty">Painting is about more than looks. It is a protective coating that helps surfaces last longer in all weather conditions.</p>
+    <span style="font-size:13px;letter-spacing:0.16em;text-transform:uppercase;font-weight:600;color:#1359AC">Gold Coast, QLD</span>
+  </div>
+</section>
+</sc-if>
+
+<!-- 02 BRAND -->
+<section data-screen-label="02 Brand" style="background:#FFFFFF;border-radius:4px;padding:56px clamp(24px,6vw,80px);display:flex;flex-direction:column;gap:40px">
+  <div style="display:flex;align-items:baseline;gap:16px;border-bottom:1px solid #C8CDD3;padding-bottom:16px">
+    <span style="font-family:'Cinzel',serif;font-size:14px;color:#1359AC;font-weight:700">02</span>
+    <h2 style="margin:0;font-family:'Cinzel',serif;font-weight:600;font-size:32px;letter-spacing:0.04em">The Brand</h2>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:48px">
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <span style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;font-weight:700;color:#1359AC">Positioning</span>
+      <p style="margin:0;font-size:22px;line-height:1.45;text-wrap:pretty">Platinum Painting is a Gold Coast painting company for homes, businesses and strata properties. We treat every coat as protection first: the right preparation and the right product so surfaces hold up against sun, salt air and storms.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <span style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;font-weight:700;color:#1359AC">Tagline</span>
+      <p style="margin:0;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:40px;line-height:1.1;color:#1359AC">The Platinum Standard In Painting</p>
+      <span style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;font-weight:700;color:#1359AC;margin-top:16px">Key message</span>
+      <p style="margin:0;font-size:18px;line-height:1.55;color:#3A3D42">Painting is about more than looks. It is a protective coating that helps surfaces last longer in all weather conditions.</p>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:1px;background:#C8CDD3;border:1px solid #C8CDD3">
+    <div style="background:#FFFFFF;padding:24px;display:flex;flex-direction:column;gap:8px">
+      <span style="font-family:'Cinzel',serif;font-size:20px;font-weight:600">Protection</span>
+      <span style="font-size:15px;line-height:1.5;color:#3A3D42">Every job starts with what the surface needs to last, then how it should look.</span>
+    </div>
+    <div style="background:#FFFFFF;padding:24px;display:flex;flex-direction:column;gap:8px">
+      <span style="font-family:'Cinzel',serif;font-size:20px;font-weight:600">Precision</span>
+      <span style="font-size:15px;line-height:1.5;color:#3A3D42">Thorough prep, clean lines and a tidy site at the end of each day.</span>
+    </div>
+    <div style="background:#FFFFFF;padding:24px;display:flex;flex-direction:column;gap:8px">
+      <span style="font-family:'Cinzel',serif;font-size:20px;font-weight:600">Local knowledge</span>
+      <span style="font-size:15px;line-height:1.5;color:#3A3D42">Products and systems chosen for coastal Queensland conditions.</span>
+    </div>
+    <div style="background:#FFFFFF;padding:24px;display:flex;flex-direction:column;gap:8px">
+      <span style="font-family:'Cinzel',serif;font-size:20px;font-weight:600">Straight talk</span>
+      <span style="font-size:15px;line-height:1.5;color:#3A3D42">Clear quotes, honest timelines and advice you can act on.</span>
+    </div>
+  </div>
+</section>
+
+<!-- 03 LOGO -->
+<section data-screen-label="03 Logo" style="background:#FFFFFF;border-radius:4px;padding:56px clamp(24px,6vw,80px);display:flex;flex-direction:column;gap:40px">
+  <div style="display:flex;align-items:baseline;gap:16px;border-bottom:1px solid #C8CDD3;padding-bottom:16px">
+    <span style="font-family:'Cinzel',serif;font-size:14px;color:#1359AC;font-weight:700">03</span>
+    <h2 style="margin:0;font-family:'Cinzel',serif;font-weight:600;font-size:32px;letter-spacing:0.04em">Logo</h2>
+  </div>
+  <div style="background:#F3F5F8;padding:clamp(32px,7vw,96px);display:flex;justify-content:center">
+    <div style="position:relative;width:min(640px,100%)">
+      <sc-if value="{{ showGuides }}" hint-placeholder-val="{{ true }}">
+        <div style="position:absolute;inset:-8%;border:1px dashed #1359AC;pointer-events:none"></div>
+        <div style="position:absolute;inset:0;outline:1px solid rgba(19,89,172,0.35);pointer-events:none"></div>
+        <span style="position:absolute;top:-8%;left:0;transform:translateY(-130%);font-size:12px;font-weight:600;color:#1359AC;letter-spacing:0.08em">CLEAR SPACE = X</span>
+      </sc-if>
+      <img src="assets/logo-transparent.png" alt="Primary logo" style="width:100%;height:auto;display:block">
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:32px">
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <span style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;font-weight:700;color:#1359AC">Primary lockup</span>
+      <p style="margin:0;font-size:15px;line-height:1.55;color:#3A3D42">Wordmark, Gold Coast descriptor and tagline. Use on white or light backgrounds wherever space allows.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <span style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;font-weight:700;color:#1359AC">Clear space</span>
+      <p style="margin:0;font-size:15px;line-height:1.55;color:#3A3D42">Keep a margin of X on all sides, where X is the height of the "P" in Platinum. No text, edges or imagery inside it.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <span style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;font-weight:700;color:#1359AC">Minimum size</span>
+      <p style="margin:0;font-size:15px;line-height:1.55;color:#3A3D42">160px / 40mm wide with tagline. Below that, remove the tagline line and keep the wordmark at 100px / 25mm minimum.</p>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px">
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div style="background:#FFFFFF;border:1px solid #C8CDD3;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;padding:32px">
+        <img src="assets/logo-transparent.png" alt="Full colour" style="width:100%;height:auto">
+      </div>
+      <span style="font-size:14px;font-weight:600">Full colour on white</span>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div style="background:#1359AC;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;padding:32px">
+        <img src="assets/logo-white.png" alt="Reversed on blue" style="width:100%;height:auto">
+      </div>
+      <span style="font-size:14px;font-weight:600">Reversed on Platinum Blue</span>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div style="background:#0E0E10;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;padding:32px">
+        <img src="assets/logo-white.png" alt="Reversed on black" style="width:100%;height:auto">
+      </div>
+      <span style="font-size:14px;font-weight:600">Reversed on Ink Black</span>
+    </div>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:16px">
+    <span style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;font-weight:700;color:#B3261E">Don't</span>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:16px">
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="background:#F3F5F8;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;padding:20px;overflow:hidden">
+          <img src="assets/logo-transparent.png" alt="" style="width:100%;height:auto;transform:scaleX(1.35) scaleY(0.75)">
+        </div>
+        <span style="font-size:14px;color:#3A3D42">Stretch or squash</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="background:#F3F5F8;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;padding:20px;overflow:hidden">
+          <img src="assets/logo-transparent.png" alt="" style="width:100%;height:auto;filter:hue-rotate(150deg) saturate(2)">
+        </div>
+        <span style="font-size:14px;color:#3A3D42">Recolour</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="background:#F3F5F8;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;padding:20px;overflow:hidden">
+          <img src="assets/logo-transparent.png" alt="" style="width:100%;height:auto;transform:rotate(-12deg)">
+        </div>
+        <span style="font-size:14px;color:#3A3D42">Rotate</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="background:#5E86B8;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;padding:20px;overflow:hidden">
+          <img src="assets/logo-transparent.png" alt="" style="width:100%;height:auto">
+        </div>
+        <span style="font-size:14px;color:#3A3D42">Place on low-contrast colour</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 COLOUR -->
+<section data-screen-label="04 Colour" style="background:#FFFFFF;border-radius:4px;padding:56px clamp(24px,6vw,80px);display:flex;flex-direction:column;gap:40px">
+  <div style="display:flex;align-items:baseline;gap:16px;border-bottom:1px solid #C8CDD3;padding-bottom:16px">
+    <span style="font-family:'Cinzel',serif;font-size:14px;color:#1359AC;font-weight:700">04</span>
+    <h2 style="margin:0;font-family:'Cinzel',serif;font-weight:600;font-size:32px;letter-spacing:0.04em">Colour</h2>
+  </div>
+  <p style="margin:0;max-width:680px;font-size:17px;line-height:1.55;color:#3A3D42;text-wrap:pretty">Blue, white and black, taken from the logo. White does most of the work, blue marks the brand and calls to action, black carries type. Supporting tones are for backgrounds and fine detail only.</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:16px">
+    <div style="display:flex;flex-direction:column;border:1px solid #C8CDD3">
+      <div style="background:#1359AC;height:180px;padding:20px;display:flex;align-items:flex-end;color:#FFFFFF;font-family:'Cinzel',serif;font-size:22px;font-weight:600">Platinum Blue</div>
+      <div style="padding:16px 20px;display:grid;grid-template-columns:auto 1fr;gap:4px 16px;font-size:13px"><b>HEX</b><span>#1359AC</span><b>RGB</b><span>19 89 172</span><b>CMYK</b><span>89 48 0 33</span><b>Use</b><span>Brand, links, buttons</span></div>
+    </div>
+    <div style="display:flex;flex-direction:column;border:1px solid #C8CDD3">
+      <div style="background:#0E0E10;height:180px;padding:20px;display:flex;align-items:flex-end;color:#FFFFFF;font-family:'Cinzel',serif;font-size:22px;font-weight:600">Ink Black</div>
+      <div style="padding:16px 20px;display:grid;grid-template-columns:auto 1fr;gap:4px 16px;font-size:13px"><b>HEX</b><span>#0E0E10</span><b>RGB</b><span>14 14 16</span><b>CMYK</b><span>0 0 0 94</span><b>Use</b><span>Headings, body text</span></div>
+    </div>
+    <div style="display:flex;flex-direction:column;border:1px solid #C8CDD3">
+      <div style="background:#FFFFFF;height:180px;padding:20px;display:flex;align-items:flex-end;color:#0E0E10;font-family:'Cinzel',serif;font-size:22px;font-weight:600;border-bottom:1px solid #C8CDD3">White</div>
+      <div style="padding:16px 20px;display:grid;grid-template-columns:auto 1fr;gap:4px 16px;font-size:13px"><b>HEX</b><span>#FFFFFF</span><b>RGB</b><span>255 255 255</span><b>CMYK</b><span>0 0 0 0</span><b>Use</b><span>Primary background</span></div>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:16px">
+    <div style="display:flex;gap:14px;align-items:center"><div style="width:56px;height:56px;background:#0B2B55;flex:none"></div><div style="display:flex;flex-direction:column;gap:2px;font-size:13px"><b style="font-size:15px">Coast Navy</b><span>#0B2B55</span><span style="color:#5A5F66">Dark sections, footer</span></div></div>
+    <div style="display:flex;gap:14px;align-items:center"><div style="width:56px;height:56px;background:#C8CDD3;flex:none"></div><div style="display:flex;flex-direction:column;gap:2px;font-size:13px"><b style="font-size:15px">Platinum Silver</b><span>#C8CDD3</span><span style="color:#5A5F66">Rules, borders</span></div></div>
+    <div style="display:flex;gap:14px;align-items:center"><div style="width:56px;height:56px;background:#E3ECF7;flex:none"></div><div style="display:flex;flex-direction:column;gap:2px;font-size:13px"><b style="font-size:15px">Sky Tint</b><span>#E3ECF7</span><span style="color:#5A5F66">Highlight panels</span></div></div>
+    <div style="display:flex;gap:14px;align-items:center"><div style="width:56px;height:56px;background:#F3F5F8;border:1px solid #C8CDD3;flex:none"></div><div style="display:flex;flex-direction:column;gap:2px;font-size:13px"><b style="font-size:15px">Mist</b><span>#F3F5F8</span><span style="color:#5A5F66">Alternate backgrounds</span></div></div>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:10px">
+    <span style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;font-weight:700;color:#1359AC">Proportion</span>
+    <div style="display:flex;height:40px;border:1px solid #C8CDD3">
+      <div style="flex:60;background:#FFFFFF"></div><div style="flex:20;background:#1359AC"></div><div style="flex:12;background:#0E0E10"></div><div style="flex:8;background:#C8CDD3"></div>
+    </div>
+    <div style="display:flex;font-size:12px;color:#5A5F66"><span style="flex:60">White 60%</span><span style="flex:20">Blue 20%</span><span style="flex:12">Black 12%</span><span style="flex:8">Support 8%</span></div>
+  </div>
+</section>
+
+<!-- 05 TYPE -->
+<section data-screen-label="05 Typography" style="background:#FFFFFF;border-radius:4px;padding:56px clamp(24px,6vw,80px);display:flex;flex-direction:column;gap:40px">
+  <div style="display:flex;align-items:baseline;gap:16px;border-bottom:1px solid #C8CDD3;padding-bottom:16px">
+    <span style="font-family:'Cinzel',serif;font-size:14px;color:#1359AC;font-weight:700">05</span>
+    <h2 style="margin:0;font-family:'Cinzel',serif;font-weight:600;font-size:32px;letter-spacing:0.04em">Typography</h2>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:32px">
+    <div style="display:flex;flex-direction:column;gap:12px;border-top:3px solid #0E0E10;padding-top:20px">
+      <span style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;font-weight:700;color:#1359AC">Display · Cinzel</span>
+      <span style="font-family:'Cinzel',serif;font-size:72px;line-height:1;font-weight:600">Aa</span>
+      <span style="font-family:'Cinzel',serif;font-size:18px;letter-spacing:0.04em">ABCDEFGHIJKLMNOPQRSTUVWXYZ</span>
+      <p style="margin:0;font-size:14px;line-height:1.5;color:#5A5F66">Classical capitals that echo the wordmark. Headings and section titles only, set in title case with slight tracking.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;border-top:3px solid #1359AC;padding-top:20px">
+      <span style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;font-weight:700;color:#1359AC">Accent · Cormorant Garamond Italic</span>
+      <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:72px;line-height:1;color:#1359AC">Aa</span>
+      <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px">abcdefghijklmnopqrstuvwxyz</span>
+      <p style="margin:0;font-size:14px;line-height:1.5;color:#5A5F66">Picks up the italic tagline. Pull quotes, testimonials and short lead-ins. Never for body copy.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;border-top:3px solid #C8CDD3;padding-top:20px">
+      <span style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;font-weight:700;color:#1359AC">Body · Figtree</span>
+      <span style="font-size:72px;line-height:1;font-weight:500">Aa</span>
+      <span style="font-size:18px">abcdefghijklmnopqrstuvwxyz 0123456789</span>
+      <p style="margin:0;font-size:14px;line-height:1.5;color:#5A5F66">Clean, readable sans for body text, navigation, buttons and forms. Weights 400–700.</p>
+    </div>
+  </div>
+  <div style="display:flex;flex-direction:column;border-top:1px solid #C8CDD3">
+    <div style="display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:baseline;padding:16px 0;border-bottom:1px solid #C8CDD3"><span style="font-size:12px;color:#5A5F66">H1 · 56/60</span><span style="font-family:'Cinzel',serif;font-size:clamp(32px,5vw,56px);line-height:1.07;font-weight:600">Protection That Lasts</span></div>
+    <div style="display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:baseline;padding:16px 0;border-bottom:1px solid #C8CDD3"><span style="font-size:12px;color:#5A5F66">H2 · 36/42</span><span style="font-family:'Cinzel',serif;font-size:clamp(26px,3.5vw,36px);line-height:1.17;font-weight:600">Exterior House Painting</span></div>
+    <div style="display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:baseline;padding:16px 0;border-bottom:1px solid #C8CDD3"><span style="font-size:12px;color:#5A5F66">Quote · 30/36</span><span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:30px;line-height:1.2;color:#1359AC">"Two summers on and the house still looks freshly painted."</span></div>
+    <div style="display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:baseline;padding:16px 0;border-bottom:1px solid #C8CDD3"><span style="font-size:12px;color:#5A5F66">Body · 17/27</span><span style="font-size:17px;line-height:1.6;max-width:620px">Gold Coast homes face strong UV, salt air and heavy summer rain. We prepare every surface properly and apply coatings rated for coastal conditions.</span></div>
+    <div style="display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:baseline;padding:16px 0;border-bottom:1px solid #C8CDD3"><span style="font-size:12px;color:#5A5F66">Label · 12</span><span style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;font-weight:700;color:#1359AC">Residential · Commercial · Strata</span></div>
+  </div>
+</section>
+
+<!-- 06 SERVICES -->
+<section data-screen-label="06 Services" style="background:#0B2B55;color:#FFFFFF;border-radius:4px;padding:56px clamp(24px,6vw,80px);display:flex;flex-direction:column;gap:40px">
+  <div style="display:flex;align-items:baseline;gap:16px;border-bottom:1px solid rgba(255,255,255,0.25);padding-bottom:16px">
+    <span style="font-family:'Cinzel',serif;font-size:14px;color:#C8CDD3;font-weight:700">06</span>
+    <h2 style="margin:0;font-family:'Cinzel',serif;font-weight:600;font-size:32px;letter-spacing:0.04em">Services &amp; Messaging</h2>
+  </div>
+  <p style="margin:0;max-width:680px;font-size:17px;line-height:1.55;color:#E3ECF7;text-wrap:pretty">Each service is described by what it protects against. Use these one-liners on the website, quotes and social posts.</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:0 48px">
+    <sc-for list="{{ services }}" as="s" hint-placeholder-count="6">
+      <div style="display:grid;grid-template-columns:40px 1fr;gap:16px;padding:22px 0;border-top:1px solid rgba(255,255,255,0.2)">
+        <span style="font-family:'Cinzel',serif;font-size:14px;color:#C8CDD3;padding-top:4px">{{ s.n }}</span>
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <span style="font-family:'Cinzel',serif;font-size:21px;font-weight:600">{{ s.name }}</span>
+          <span style="font-size:15px;line-height:1.5;color:#E3ECF7">{{ s.line }}</span>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+  <p style="margin:0;font-size:14px;color:#C8CDD3">Also offered: timber deck and pergola restoration, colour consultations.</p>
+</section>
+
+<!-- 07 VOICE -->
+<section data-screen-label="07 Voice" style="background:#FFFFFF;border-radius:4px;padding:56px clamp(24px,6vw,80px);display:flex;flex-direction:column;gap:40px">
+  <div style="display:flex;align-items:baseline;gap:16px;border-bottom:1px solid #C8CDD3;padding-bottom:16px">
+    <span style="font-family:'Cinzel',serif;font-size:14px;color:#1359AC;font-weight:700">07</span>
+    <h2 style="margin:0;font-family:'Cinzel',serif;font-weight:600;font-size:32px;letter-spacing:0.04em">Tone of Voice</h2>
+  </div>
+  <p style="margin:0;max-width:680px;font-size:17px;line-height:1.55;color:#3A3D42;text-wrap:pretty">Knowledgeable, calm and practical. We sound like an experienced tradesperson explaining the job: plain words, specific details, no hype.</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:24px">
+    <div style="background:#E3ECF7;padding:28px;display:flex;flex-direction:column;gap:16px">
+      <span style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;font-weight:700;color:#1359AC">We say</span>
+      <span style="font-size:17px;line-height:1.5">"We pressure-clean, repair and prime before any topcoat goes on."</span>
+      <span style="font-size:17px;line-height:1.5">"This membrane is rated for coastal UV and helps stop water getting in."</span>
+      <span style="font-size:17px;line-height:1.5">"Your quote lists every product and step, so you know what you're paying for."</span>
+    </div>
+    <div style="background:#F3F5F8;padding:28px;display:flex;flex-direction:column;gap:16px">
+      <span style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;font-weight:700;color:#5A5F66">We avoid</span>
+      <span style="font-size:17px;line-height:1.5;color:#5A5F66">"Transform your home with stunning, world-class results!"</span>
+      <span style="font-size:17px;line-height:1.5;color:#5A5F66">"The cheapest painters on the Coast."</span>
+      <span style="font-size:17px;line-height:1.5;color:#5A5F66">Vague promises without products, prep or timeframes.</span>
+    </div>
+  </div>
+</section>
+
+<!-- 08 IMAGERY -->
+<section data-screen-label="08 Imagery" style="background:#FFFFFF;border-radius:4px;padding:56px clamp(24px,6vw,80px);display:flex;flex-direction:column;gap:40px">
+  <div style="display:flex;align-items:baseline;gap:16px;border-bottom:1px solid #C8CDD3;padding-bottom:16px">
+    <span style="font-family:'Cinzel',serif;font-size:14px;color:#1359AC;font-weight:700">08</span>
+    <h2 style="margin:0;font-family:'Cinzel',serif;font-weight:600;font-size:32px;letter-spacing:0.04em">Photography</h2>
+  </div>
+  <p style="margin:0;max-width:680px;font-size:17px;line-height:1.55;color:#3A3D42;text-wrap:pretty">Real Platinum Painting jobs only, shot in natural daylight. Show the finished result, the preparation behind it, and the crew at work. No stock photos of people holding rollers.</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:16px">
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div style="aspect-ratio:4/5"><image-slot id="img-finished" shape="rect" placeholder="Finished exterior, full daylight"></image-slot></div>
+      <span style="font-size:14px;font-weight:600">The finished home</span>
+      <span style="font-size:14px;color:#5A5F66;line-height:1.45">Wide, straight-on, blue sky where possible.</span>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div style="aspect-ratio:4/5"><image-slot id="img-detail" shape="rect" placeholder="Close-up: coating, edge or texture"></image-slot></div>
+      <span style="font-size:14px;font-weight:600">The detail</span>
+      <span style="font-size:14px;color:#5A5F66;line-height:1.45">Crisp cut-in lines, render texture, roof membrane.</span>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div style="aspect-ratio:4/5"><image-slot id="img-crew" shape="rect" placeholder="Crew prepping a surface"></image-slot></div>
+      <span style="font-size:14px;font-weight:600">The preparation</span>
+      <span style="font-size:14px;color:#5A5F66;line-height:1.45">Cleaning, sanding, priming. Proof of the protection story.</span>
+    </div>
+  </div>
+</section>
+
+<!-- 09 APPLICATIONS -->
+<section data-screen-label="09 Applications" style="background:#FFFFFF;border-radius:4px;padding:56px clamp(24px,6vw,80px);display:flex;flex-direction:column;gap:40px">
+  <div style="display:flex;align-items:baseline;gap:16px;border-bottom:1px solid #C8CDD3;padding-bottom:16px">
+    <span style="font-family:'Cinzel',serif;font-size:14px;color:#1359AC;font-weight:700">09</span>
+    <h2 style="margin:0;font-family:'Cinzel',serif;font-weight:600;font-size:32px;letter-spacing:0.04em">Applications</h2>
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:12px">
+    <span style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;font-weight:700;color:#1359AC">Website hero</span>
+    <div style="border:1px solid #C8CDD3;overflow:hidden">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:24px;padding:16px 28px;border-bottom:1px solid #C8CDD3;flex-wrap:wrap">
+        <img src="assets/logo-transparent.png" alt="Platinum Painting" style="height:44px;width:auto">
+        <div style="display:flex;gap:24px;font-size:14px;font-weight:500;flex-wrap:wrap;align-items:center">
+          <span>Home</span><span>About Us</span><span>Services</span><span>Gallery</span><span>Testimonials</span><span>Contact Us</span>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr))">
+        <div style="padding:clamp(28px,5vw,64px);display:flex;flex-direction:column;gap:20px;justify-content:center">
+          <span style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;font-weight:700;color:#1359AC">Gold Coast Painters</span>
+          <h1 style="margin:0;font-family:'Cinzel',serif;font-size:clamp(32px,4.4vw,52px);line-height:1.08;font-weight:600">More Than Looks. Protection That Lasts.</h1>
+          <p style="margin:0;font-size:17px;line-height:1.6;color:#3A3D42;max-width:460px">Interior, exterior, commercial and strata painting, roof restorations and render coatings, prepared and applied to stand up to Gold Coast weather.</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap">
+            <span style="background:#1359AC;color:#FFFFFF;padding:14px 24px;font-weight:600;font-size:15px">Get a Free Quote</span>
+            <span style="border:1.5px solid #0E0E10;padding:12.5px 22px;font-weight:600;font-size:15px">View Our Work</span>
+          </div>
+        </div>
+        <div style="min-height:360px;position:relative"><image-slot id="hero-web" shape="rect" placeholder="Hero: finished Gold Coast home"></image-slot></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:32px;align-items:start">
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <span style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;font-weight:700;color:#1359AC">Business card · 90 × 55mm</span>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div style="aspect-ratio:90/55;background:#FFFFFF;border:1px solid #C8CDD3;box-shadow:0 8px 24px rgba(11,43,85,0.08);display:flex;align-items:center;justify-content:center;padding:10%">
+          <img src="assets/logo-transparent.png" alt="" style="width:100%;height:auto">
+        </div>
+        <div style="aspect-ratio:90/55;background:#1359AC;color:#FFFFFF;box-shadow:0 8px 24px rgba(11,43,85,0.15);padding:7%;display:flex;flex-direction:column;justify-content:space-between">
+          <div style="display:flex;flex-direction:column;gap:2px">
+            <span style="font-family:'Cinzel',serif;font-size:20px;font-weight:600">Full Name</span>
+            <span style="font-size:13px;color:#E3ECF7">Director</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:3px;font-size:13px">
+            <span>0400 000 000</span><span>hello@platinumpainting.com.au</span><span>platinumpainting.com.au</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <span style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;font-weight:700;color:#1359AC">Social post · 1:1</span>
+      <div style="aspect-ratio:1/1;background:#0E0E10;color:#FFFFFF;display:flex;flex-direction:column;justify-content:space-between;padding:8%;box-shadow:0 8px 24px rgba(11,43,85,0.15)">
+        <span style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;font-weight:700;color:#C8CDD3">Roof Restorations</span>
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <span style="font-family:'Cinzel',serif;font-size:clamp(26px,3.2vw,38px);line-height:1.1;font-weight:600">A Sealed Roof Is a Dry Home.</span>
+          <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:#E3ECF7">Clean, repair, coat. Ready before storm season.</span>
+        </div>
+        <img src="assets/logo-white.png" alt="" style="width:42%;height:auto">
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;coverStyle&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Blue&quot;,&quot;Ink&quot;,&quot;White&quot;],&quot;default&quot;:&quot;Blue&quot;,&quot;tsType&quot;:&quot;'Blue'|'Ink'|'White'&quot;},&quot;showGuides&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const cover = this.props.coverStyle ?? 'Blue';
+    return {
+      coverBlue: cover === 'Blue', coverInk: cover === 'Ink', coverWhite: cover === 'White',
+      showGuides: this.props.showGuides ?? true,
+      services: [
+        { n: '01', name: 'Interior House Painting', line: 'Washable, low-odour finishes that resist scuffs, moisture and everyday wear.' },
+        { n: '02', name: 'Exterior House Painting', line: 'Coatings rated for UV, salt air and summer storms, applied over properly prepared surfaces.' },
+        { n: '03', name: 'Commercial Painting', line: 'Durable, specified finishes scheduled around your trading hours.' },
+        { n: '04', name: 'Strata / Body Corp Painting', line: 'Planned repaint programs that protect shared buildings and keep maintenance on budget.' },
+        { n: '05', name: 'Roof Restorations', line: 'Cleaning, repairs and membrane coatings that seal out water and reflect heat.' },
+        { n: '06', name: 'Render Coatings', line: 'Flexible, breathable systems that bridge hairline cracks and keep render weathertight.' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
