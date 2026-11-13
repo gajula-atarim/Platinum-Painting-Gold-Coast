@@ -510,3 +510,6 @@ html,body{overflow-x:clip!important}
   .pp-badge .elementor-widget:first-of-type .elementor-heading-title{font-size:16px!important}
   .pp-badge .elementor-widget:last-of-type .elementor-heading-title{font-size:12px!important}
 }
+
+/* ---------- Desktop hero: paint cans moved lower ---------- */
+@media (min-width:1025px){.pp-hero-cans{bottom:-18%!important}}
