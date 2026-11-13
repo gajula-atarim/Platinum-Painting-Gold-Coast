@@ -355,3 +355,50 @@ body{overflow-x:hidden;-webkit-font-smoothing:antialiased;color:var(--pp-ink)}
 .pp-tdots button.is-on{width:28px!important;background:#fff!important}
 .pp-tcap{flex-wrap:nowrap!important}
 .pp-tcap>.e-con{width:auto!important;flex:1 1 auto!important;min-width:0}
+
+/* ---------- Responsive round 5 ---------- */
+/* footer: keep 4 columns down to tablet landscape */
+.pp-fgrid{grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr))!important}
+/* contact cards: icon always beside text */
+.pp-cc{flex-wrap:nowrap!important}
+.pp-cc>.e-con{width:auto!important;flex:1 1 auto!important}
+
+@media (max-width:1024px){
+  /* decorations that collide with headings/text on smaller screens */
+  .pp-deco-why-brush,.pp-deco-why-cans,.pp-deco-ba{display:none!important}
+  .pp-deco{zoom:.6}
+  /* gallery: 2 columns on tablet */
+  .pp-gal-grid{grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr))!important;grid-auto-rows:280px}
+  /* weather cards: 3 across on tablet (no orphan) */
+  .pp-threats>.e-con-inner{grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr))!important}
+  .pp-threat .elementor-heading-title{font-size:21px}
+}
+@media (min-width:700px) and (max-width:1024px){
+  /* offers: 2 + full-width third card (no orphan) */
+  .pp-offers>.e-con-inner{grid-template-columns:1fr 1fr!important}
+  .pp-offers .pp-offer:nth-child(3){grid-column:1 / -1}
+}
+@media (max-width:767px){
+  /* hero: light gradient behind the copy, blue toward the image below */
+  .pp-hero-bg::after{background:linear-gradient(180deg,rgba(255,255,255,.97) 0%,rgba(240,245,252,.94) 45%,rgba(19,89,172,.55) 75%,rgba(11,43,85,.75) 100%)}
+  .pp-hero-card-wrap{left:0;top:2%}
+  .pp-hero-cans{right:-4%;bottom:-6%;width:170px!important;height:150px}
+  .pp-hero-cans-img,.pp-hero-cans-img img{width:180px!important}
+  .pp-twinkles{right:0;top:-2%;transform:scale(.7);transform-origin:top right}
+  .pp-scribble{left:2%}
+  /* services: tighter cards */
+  .pp-svc{padding:28px 20px!important}
+  .pp-svc-icon,.pp-svc-icon img{width:96px!important;height:96px}
+  /* decorations: hide those that overlap headings */
+  .pp-deco-svc-cans,.pp-deco-svc-brushes,.pp-deco-gal,.pp-deco-about{display:none!important}
+  .pp-deco{zoom:.5}
+  .pp-gal-grid{grid-auto-rows:260px}
+  /* before/after slider a bit taller on phones */
+  .pp-ba{height:260px}
+  /* footer bottom row */
+  .pp-fbottom{flex-direction:column;align-items:flex-start!important}
+}
+@media (max-width:400px){
+  .pp-hero-pill .elementor-heading-title{font-size:12px}
+  .pp-cc-value .elementor-heading-title{font-size:14px}
+}
