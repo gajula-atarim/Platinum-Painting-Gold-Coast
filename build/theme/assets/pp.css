@@ -482,3 +482,6 @@ html,body{overflow-x:clip!important}
   .pp-threat .pp-num,.pp-threat .pp-num .elementor-heading-title{width:34px!important;height:34px;font-size:13px!important}
   .pp-threat .elementor-widget-text-editor{font-size:14px}
 }
+
+/* ---------- Tablet hero: paint cans moved down/right so the photo tile shows ---------- */
+@media (min-width:768px) and (max-width:1024px){.pp-hero-cans{bottom:-17%!important;right:-14%!important}}
