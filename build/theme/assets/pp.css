@@ -485,3 +485,14 @@ html,body{overflow-x:clip!important}
 
 /* ---------- Tablet hero: paint cans moved down/right so the photo tile shows ---------- */
 @media (min-width:768px) and (max-width:1024px){.pp-hero-cans{bottom:-17%!important;right:-14%!important}}
+
+/* ---------- Small phones (≤400px): offer button + badge stay on one row ---------- */
+@media (max-width:400px){
+  .pp-offer{padding:26px 20px 22px!important}
+  .pp-offer-foot{flex-wrap:nowrap!important;gap:10px!important}
+  .pp-offer-btn{flex:0 1 auto!important;min-width:0}
+  .pp-offer-btn .elementor-button{padding-left:18px!important;padding-right:18px!important;white-space:nowrap}
+  .pp-badge{width:70px!important;height:70px!important;flex:0 0 70px!important}
+  .pp-badge .elementor-widget:first-of-type .elementor-heading-title{font-size:17px!important}
+  .pp-badge .elementor-widget:last-of-type .elementor-heading-title{font-size:13px!important}
+}
