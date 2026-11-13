@@ -539,9 +539,10 @@ footer = [con([
                 con([fhead('Services'), link_list([(t, '/services/') for t in ['Interior House Painting', 'Exterior House Painting', 'Commercial Painting', 'Strata / Body Corp Painting', 'Roof Restorations', 'Render Coatings']])], '', gap_=20),
                 con([fhead('Company'), link_list([('About Us', '/about/'), ('Gallery', '/gallery/'), ('Testimonials', '/testimonials/'), ('Contact Us', '/contact/')])], '', gap_=20),
                 con([fhead('Get in Touch'), widget('icon-list', {
-                    'icon_list': [{'_id': uid('li'), 'text': t, 'selected_icon': {'value': v, 'library': l}} for t, v, l in [
-                        (PHONE, 'fas fa-phone-alt', 'fa-solid'), (EMAIL, 'far fa-envelope', 'fa-regular'),
-                        ('Gold Coast, QLD', 'fas fa-map-marker-alt', 'fa-solid'), ('Mon–Fri 7am–5pm', 'far fa-clock', 'fa-regular')]],
+                    'icon_list': [dict({'_id': uid('li'), 'text': t, 'selected_icon': {'value': v, 'library': l}}, **({'link': {'url': u, 'is_external': '', 'nofollow': ''}} if u else {})) for t, v, l, u in [
+                        (PHONE, 'fas fa-phone-alt', 'fa-solid', PHONE_TEL), (EMAIL, 'far fa-envelope', 'fa-regular', 'mailto:' + EMAIL),
+                        ('Gold Coast, QLD', 'fas fa-map-marker-alt', 'fa-solid', None), ('Mon–Fri 7am–5pm', 'far fa-clock', 'fa-regular', None)]],
+                    'text_color_hover': '#FFFFFF',
                     'space_between': px(14), 'icon_color': '#7FA7DB', 'icon_size': px(16), 'text_color': GREY, 'text_indent': px(12),
                     **typo('icon_typography', family=FIG, size=15, lh=1.45),
                 }, 'pp-fcontact')], '', gap_=20),
