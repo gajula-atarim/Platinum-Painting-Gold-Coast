@@ -446,3 +446,9 @@ body{overflow-x:hidden;-webkit-font-smoothing:antialiased;color:var(--pp-ink)}
 /* ---------- No horizontal overflow on mobile (marquee band extends past the edges by design) ---------- */
 html,body{overflow-x:clip!important}
 [data-elementor-type="wp-page"],[data-elementor-type="header"],[data-elementor-type="footer"],#page{overflow-x:clip!important;max-width:100vw}
+
+/* ---------- Mobile hero: smaller paint cans so the photo tile stays visible ---------- */
+@media (max-width:767px){
+  .pp-hero-cans{right:-3%!important;bottom:-5%!important;width:115px!important;height:110px!important}
+  .pp-hero-cans-img,.pp-hero-cans-img img{width:115px!important}
+}
