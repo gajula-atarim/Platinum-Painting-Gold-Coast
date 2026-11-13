@@ -334,3 +334,17 @@ body{overflow-x:hidden;-webkit-font-smoothing:antialiased;color:var(--pp-ink)}
   .pp-hright{order:2!important}
   .pp-logo{order:1!important;margin-right:auto}
 }
+
+/* ---------- QA round 2 fixes ---------- */
+@media (max-width:1024px){
+  .pp-hright{flex:0 0 auto!important;width:auto!important;min-width:max-content}
+  .pp-nav{flex:0 0 50px!important;width:50px!important;max-width:50px!important;min-width:0}
+  .pp-nav .hfe-nav-menu__toggle{margin:0!important}
+}
+@media (max-width:767px){.pp-nav{flex-basis:44px!important;width:44px!important;max-width:44px!important}}
+@media (max-width:400px){
+  .pp-logo img{height:32px}
+  .pp-hphone .elementor-button{padding:11px 12px!important;font-size:13px!important}
+  .pp-header-pill{padding-left:12px!important}
+}
+.pp-tslider{width:calc(100% + 22px)!important;max-width:calc(100% + 22px)!important;align-self:stretch!important;min-width:0!important;flex:none!important}

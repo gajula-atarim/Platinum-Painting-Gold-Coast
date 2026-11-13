@@ -175,11 +175,12 @@
       var next = section.querySelector('.pp-tnext a, .pp-tnext .elementor-button');
       var dotsWrap = d.createElement('div'); dotsWrap.className = 'pp-tdots'; wrap.appendChild(dotsWrap);
       var idx = 0, pv = 3;
-      function perView() { var w = wrap.offsetWidth; return w < 640 ? 1 : w < 1000 ? 2 : 3; }
+      function avail() { var p = wrap.parentElement; return p ? p.clientWidth + 22 : wrap.clientWidth; }
+      function perView() { var w = avail(); return w < 640 ? 1 : w < 1000 ? 2 : 3; }
       function render() {
         var max = cards.length - pv;
         if (idx > max) idx = 0; if (idx < 0) idx = max;
-        var cw = wrap.clientWidth / pv;
+        var cw = avail() / pv;
         inner.style.width = (cw * cards.length) + 'px';
         inner.style.maxWidth = 'none';
         inner.style.transform = 'translateX(-' + (idx * cw) + 'px)';
