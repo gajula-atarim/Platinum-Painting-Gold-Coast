@@ -458,3 +458,9 @@ html,body{overflow-x:clip!important}
 
 /* ---------- Mobile hero: paint cans moved lower ---------- */
 @media (max-width:767px){.pp-hero-cans{bottom:-14%!important}}
+
+/* ---------- Footer "Get in Touch" icons centred in their squares, text vertically aligned ---------- */
+.pp-fcontact .elementor-icon-list-item{align-items:center!important}
+.pp-fcontact .elementor-icon-list-icon{display:flex!important;align-items:center!important;justify-content:center!important;padding:0!important;margin:0!important;line-height:0!important}
+.pp-fcontact .elementor-icon-list-icon svg,.pp-fcontact .elementor-icon-list-icon i{position:static!important;top:auto!important;margin:0!important;width:16px!important;height:16px!important;font-size:16px!important;display:block}
+.pp-fcontact .elementor-icon-list-text{padding-top:0!important;padding-left:12px!important}
