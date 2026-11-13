@@ -228,7 +228,7 @@ def offer(label, title, btn, badge_top, badge_bottom, variant, d):
     badge_fg = NAVY if blue else '#FFFFFF'
     return con([
         heading(label, 'div', '', fg, family=FIG, size=15, weight=500, lh=1.4),
-        heading(title, 'h3', '', fg, family=CINZEL, size=21, weight=600, lh=1.3),
+        heading(title, 'div', 'pp-offer-title', fg, family=CINZEL, size=21, weight=600, lh=1.3),
         con([
             b,
             con([

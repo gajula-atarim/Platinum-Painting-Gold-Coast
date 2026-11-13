@@ -20,8 +20,7 @@
     /* ---------- split hero headline into words (each revealed in turn, as in the design) ---------- */
     if (!editor) $$('.pp-split .elementor-heading-title').forEach(function (h) {
       var t = h.textContent.trim();
-      h.setAttribute('aria-label', t);
-      h.innerHTML = t.split(/\s+/).map(function (w, i) { return '<span class="pp-hw pp-r-up pp-d' + Math.min(i, 9) + '" aria-hidden="true">' + w.replace(/</g, '&lt;') + '</span>'; }).join(' ');
+      h.innerHTML = '<span class="pp-sr">' + t.replace(/</g, '&lt;') + '</span>' + t.split(/\s+/).map(function (w, i) { return '<span class="pp-hw pp-r-up pp-d' + Math.min(i, 9) + '" aria-hidden="true">' + w.replace(/</g, '&lt;') + '</span>'; }).join(' ');
     });
 
     /* ---------- reveal on scroll ---------- */
@@ -100,8 +99,7 @@
       var target = fill.querySelector('.elementor-widget-container') || fill;
       var p = target.querySelector('p') || target;
       var text = p.textContent.trim();
-      p.setAttribute('aria-label', text);
-      p.innerHTML = text.split(/\s+/).map(function (w) { return '<span class="pp-word" aria-hidden="true">' + w.replace(/</g, '&lt;') + '</span>'; }).join(' ');
+      p.innerHTML = '<span class="pp-sr">' + text.replace(/</g, '&lt;') + '</span>' + text.split(/\s+/).map(function (w) { return '<span class="pp-word" aria-hidden="true">' + w.replace(/</g, '&lt;') + '</span>'; }).join(' ');
       words = $$('.pp-word', p);
     }
 
@@ -147,8 +145,10 @@
 
     /* ---------- before / after slider ---------- */
     $$('.pp-ba').forEach(function (ba) {
-      ba.style.setProperty('--pp-ba', '46.7%');
-      var set = function (e) { var r = ba.getBoundingClientRect(); var pc = Math.max(2, Math.min(98, (e.clientX - r.left) / r.width * 100)); ba.style.setProperty('--pp-ba', pc.toFixed(2) + '%'); };
+      var setV = function (pc) { ba.style.setProperty('--pp-ba', pc.toFixed(2) + '%'); ba.setAttribute('aria-valuenow', Math.round(pc)); ba.setAttribute('aria-valuetext', Math.round(pc) + '% before'); };
+      ba.setAttribute('aria-valuemin', '0'); ba.setAttribute('aria-valuemax', '100');
+      setV(46.7);
+      var set = function (e) { var r = ba.getBoundingClientRect(); setV(Math.max(2, Math.min(98, (e.clientX - r.left) / r.width * 100))); };
       ba.addEventListener('pointerdown', function (e) {
         if (editor) return; set(e);
         var mv = function (ev) { set(ev); };
@@ -159,7 +159,7 @@
       ba.addEventListener('keydown', function (e) {
         var v = parseFloat(ba.style.getPropertyValue('--pp-ba')) || 46.7;
         if (e.key === 'ArrowLeft') v -= 4; else if (e.key === 'ArrowRight') v += 4; else return;
-        e.preventDefault(); ba.style.setProperty('--pp-ba', Math.max(2, Math.min(98, v)) + '%');
+        e.preventDefault(); setV(Math.max(2, Math.min(98, v)));
       });
     });
 
@@ -181,10 +181,13 @@
         var max = cards.length - pv;
         if (idx > max) idx = 0; if (idx < 0) idx = max;
         var cw = avail() / pv;
-        inner.style.width = (cw * cards.length) + 'px';
-        inner.style.maxWidth = 'none';
+        inner.style.setProperty('width', (cw * cards.length) + 'px', 'important');
         inner.style.transform = 'translateX(-' + (idx * cw) + 'px)';
-        cards.forEach(function (c) { c.style.flex = '0 0 ' + cw + 'px'; c.style.width = cw + 'px'; c.style.maxWidth = cw + 'px'; });
+        cards.forEach(function (c) {
+          c.style.setProperty('flex', '0 0 ' + cw + 'px', 'important');
+          c.style.setProperty('width', cw + 'px', 'important');
+          c.style.setProperty('max-width', cw + 'px', 'important');
+        });
         dotsWrap.innerHTML = '';
         for (var i = 0; i <= max; i++) {
           var b = d.createElement('button'); b.type = 'button'; b.setAttribute('aria-label', 'Go to slide ' + (i + 1));
