@@ -418,3 +418,11 @@ body{overflow-x:hidden;-webkit-font-smoothing:antialiased;color:var(--pp-ink)}
   .pp-nav nav.hfe-dropdown li.current-menu-item>a{color:#1359AC!important;font-weight:600}
 }
 @media (max-width:767px){.pp-nav{height:44px}}
+
+/* ---------- Hamburger icon centred in its circle ---------- */
+@media (max-width:1024px){
+  .pp-nav .hfe-nav-menu__toggle{display:flex!important;align-items:center!important;justify-content:center!important;padding:0!important;line-height:1!important;position:relative!important}
+  .pp-nav .hfe-nav-menu__toggle>*:not(.hfe-nav-menu-icon){position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;margin:0!important}
+  .pp-nav .hfe-nav-menu-icon{display:flex!important;align-items:center;justify-content:center;margin:0!important;padding:0!important;line-height:0!important}
+  .pp-nav .hfe-nav-menu-icon svg,.pp-nav .hfe-nav-menu-icon i{display:block!important;margin:0!important}
+}
