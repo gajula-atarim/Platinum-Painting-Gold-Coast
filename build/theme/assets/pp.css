@@ -455,3 +455,6 @@ html,body{overflow-x:clip!important}
 
 /* ---------- Mobile header: tighter gap between phone and menu buttons ---------- */
 @media (max-width:767px){.pp-header-pill>.e-con-inner{gap:6px!important;column-gap:6px!important}}
+
+/* ---------- Mobile hero: paint cans moved lower ---------- */
+@media (max-width:767px){.pp-hero-cans{bottom:-14%!important}}
