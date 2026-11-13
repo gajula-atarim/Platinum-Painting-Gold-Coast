@@ -514,3 +514,7 @@ html,body{overflow-x:clip!important}
 /* ---------- Desktop hero: paint cans moved lower ---------- */
 @media (min-width:1025px){.pp-hero-cans{bottom:-18%!important}}
 @media (min-width:1025px){.pp-hero-cans{bottom:-24%!important}}
+
+/* ---------- Hover parity with design: only the hero "Get a Free Quote" button gets the blue glow ---------- */
+.pp-btn-lift3 .elementor-button:hover{box-shadow:none}
+.pp-hero .pp-btn-lift3 .elementor-button:hover{box-shadow:0 12px 24px rgba(19,89,172,.3)}
