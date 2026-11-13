@@ -513,3 +513,4 @@ html,body{overflow-x:clip!important}
 
 /* ---------- Desktop hero: paint cans moved lower ---------- */
 @media (min-width:1025px){.pp-hero-cans{bottom:-18%!important}}
+@media (min-width:1025px){.pp-hero-cans{bottom:-24%!important}}
