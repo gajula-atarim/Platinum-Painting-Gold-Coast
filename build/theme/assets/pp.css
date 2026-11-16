@@ -536,3 +536,6 @@ html,body{overflow-x:clip!important}
 .pp-fpanel{max-width:none!important;width:100%!important;margin:0!important;border-radius:0!important}
 .pp-fpanel>.e-con-inner{max-width:none!important;width:100%!important}
 @media (min-width:1025px){.pp-fcta,.pp-fmain{padding-left:max(56px,calc((100% - 1280px)/2))!important;padding-right:max(56px,calc((100% - 1280px)/2))!important}}
+
+/* ---------- "Why It Matters" statement: fits on three lines on desktop (no orphaned last word) ---------- */
+@media (min-width:1025px){.pp-wordfill,.pp-wordfill *{font-size:clamp(30px,3.85vw,44px)!important}}
