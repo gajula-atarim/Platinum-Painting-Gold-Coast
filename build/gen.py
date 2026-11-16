@@ -310,7 +310,6 @@ before_after = con([
         ], 'pp-ba-head', grid={'cols': 2, 'cols_t': 1, 'cols_m': 1, 'gap': 56, 'rgap': 24}),
         con([
             image('ba', 'pp-ba-after pp-cover'),
-            image('ba', 'pp-ba-before pp-cover'),
             heading('Before', 'div', 'pp-ba-tag pp-ba-tag--before', '#FFFFFF', family=FIG, size=12, weight=700, ls=0.12, transform='uppercase'),
             heading('After', 'div', 'pp-ba-tag pp-ba-tag--after', '#FFFFFF', family=FIG, size=12, weight=700, ls=0.12, transform='uppercase'),
         ], 'pp-ba pp-r-up pp-d2', overflow='hidden'),
