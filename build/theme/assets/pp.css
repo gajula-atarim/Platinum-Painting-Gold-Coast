@@ -547,3 +547,6 @@ html,body{overflow-x:clip!important}
 
 /* ---------- Before/After: static 50/50 split, no drag interaction ---------- */
 .pp-ba{cursor:default!important;touch-action:auto!important;user-select:auto!important;-webkit-user-select:auto!important;--pp-ba:50%}
+
+/* ---------- "Why It Matters": blue brush moved up/left, clear of the heading ---------- */
+@media (min-width:1025px){.pp-deco-why-brush{left:1.5%!important;top:24px!important}}
