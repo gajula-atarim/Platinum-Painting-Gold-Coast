@@ -403,11 +403,15 @@ gallery = con([
 ], 'pp-gallery', bg=BG, css_id='work', overflow='hidden')
 
 # ---- testimonials
-REV = [('The prep work was thorough and the finish is spotless. The team left the place cleaner than they found it.', 'Customer Name', 'Exterior painting · Suburb', 'C'),
-       ('Our roof had leaked for two seasons. Since the restoration we haven’t had a drop come through.', 'Customer Name', 'Roof restoration · Suburb', 'C'),
-       ('Clear quote, finished on schedule and minimal disruption for residents. We’ll use them again.', 'Strata Manager', 'Strata painting · Suburb', 'S'),
-       ('They talked us through the render system and why it mattered. Two summers on, no cracks.', 'Customer Name', 'Render coating · Suburb', 'C'),
-       ('Fast, tidy and honest about what our deck actually needed. It looks brand new.', 'Customer Name', 'Deck restoration · Suburb', 'C')]
+REV = [('The prep work was thorough and the finish is spotless. The team left the place cleaner than they found it.', 'Sarah M.', 'Exterior painting · Burleigh Heads', 'S'),
+       ('Our roof had leaked for two seasons. Since the restoration we haven’t had a drop come through.', 'James T.', 'Roof restoration · Robina', 'J'),
+       ('Clear quote, finished on schedule and minimal disruption for residents. We’ll use them again.', 'Michelle K.', 'Strata painting · Broadbeach', 'M'),
+       ('They talked us through the render system and why it mattered. Two summers on, no cracks.', 'Daniel R.', 'Render coating · Mermaid Beach', 'D'),
+       ('Fast, tidy and honest about what our deck actually needed. It looks brand new.', 'Priya S.', 'Deck restoration · Hope Island', 'P'),
+       ('Our interior repaint was done in three days with zero mess. The colour advice alone was worth it.', 'Liam O.', 'Interior painting · Southport', 'L'),
+       ('They worked around our café’s trading hours and the shopfront looks sharp. Highly recommend.', 'Grace W.', 'Commercial painting · Coolangatta', 'G'),
+       ('Honest quote, no surprises, and the finish has held up through a full summer of storms.', 'Tom B.', 'Exterior painting · Palm Beach', 'T')]
+# NOTE: sample reviewers/reviews for staging only — replace with genuine customer reviews before launch.
 def tcard(q, name, meta, ini):
     return con([con([
         widget('star-rating', {'rating_scale': '5', 'rating': 5, 'star_style': 'star_unicode', 'unmarked_star_style': 'solid',
