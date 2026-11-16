@@ -305,7 +305,7 @@ before_after = con([
                 heading('Before &amp; After', 'div', 'pp-pill pp-pill--white pp-r-up', NAVY, family=FIG, size=13, weight=600, lh=1.3),
                 heading('From Weathered to Protected', 'h2', 'pp-r-up pp-d1', '#FFFFFF', family=CINZEL, size=48, size_t=39, size_m=30, weight=600, lh=1.12),
             ], '', gap_=16),
-            text('<p>Sun, salt and rain wear an exterior down year after year. A full repaint with the right preparation and coating system restores the colour and seals the surface again. Drag the handle to see the difference.</p>',
+            text('<p>Sun, salt and rain wear an exterior down year after year. A full repaint with the right preparation and coating system restores the colour and seals the surface again.</p>',
                  'pp-ba-lead pp-r-up pp-d2', MIST, family=FIG, size=16, lh=1.65),
         ], 'pp-ba-head', grid={'cols': 2, 'cols_t': 1, 'cols_m': 1, 'gap': 56, 'rgap': 24}),
         con([

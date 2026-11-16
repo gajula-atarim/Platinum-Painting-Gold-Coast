@@ -144,26 +144,8 @@
     });
 
     /* ---------- before / after slider ---------- */
-    $$('.pp-ba').forEach(function (ba) {
-      var setV = function (pc) { ba.style.setProperty('--pp-ba', pc.toFixed(2) + '%'); ba.setAttribute('aria-valuenow', Math.round(pc)); ba.setAttribute('aria-valuetext', Math.round(pc) + '% before'); };
-      ba.setAttribute('aria-valuemin', '0'); ba.setAttribute('aria-valuemax', '100');
-      setV(46.7);
-      var cur = function () { return parseFloat(ba.style.getPropertyValue('--pp-ba')) || 46.7; };
-      /* Drag only: a plain click/tap does nothing; dragging moves the split relative to where it is. */
-      ba.addEventListener('pointerdown', function (e) {
-        if (editor) return;
-        var r = ba.getBoundingClientRect(), x0 = e.clientX, v0 = cur();
-        var mv = function (ev) { setV(Math.max(2, Math.min(98, v0 + (ev.clientX - x0) / r.width * 100))); };
-        var up = function () { window.removeEventListener('pointermove', mv); window.removeEventListener('pointerup', up); window.removeEventListener('pointercancel', up); };
-        window.addEventListener('pointermove', mv); window.addEventListener('pointerup', up); window.addEventListener('pointercancel', up);
-      });
-      ba.setAttribute('tabindex', '0'); ba.setAttribute('role', 'slider'); ba.setAttribute('aria-label', 'Before and after comparison');
-      ba.addEventListener('keydown', function (e) {
-        var v = parseFloat(ba.style.getPropertyValue('--pp-ba')) || 46.7;
-        if (e.key === 'ArrowLeft') v -= 4; else if (e.key === 'ArrowRight') v += 4; else return;
-        e.preventDefault(); setV(Math.max(2, Math.min(98, v)));
-      });
-    });
+    /* Static split (no interaction): "Before" on the left half, "After" on the right half. */
+    $$('.pp-ba').forEach(function (ba) { ba.style.setProperty('--pp-ba', '50%'); });
 
     /* ---------- testimonial slider ---------- */
     $$('.pp-tslider').forEach(function (wrap) {

@@ -544,3 +544,6 @@ html,body{overflow-x:clip!important}
 .pp-svc-grid{align-items:stretch!important}
 .pp-svc{height:100%!important}
 .pp-svc .pp-svc-link{margin-top:auto!important}
+
+/* ---------- Before/After: static 50/50 split, no drag interaction ---------- */
+.pp-ba{cursor:default!important;touch-action:auto!important;user-select:auto!important;-webkit-user-select:auto!important;--pp-ba:50%}
