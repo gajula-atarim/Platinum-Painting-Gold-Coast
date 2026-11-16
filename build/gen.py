@@ -488,9 +488,6 @@ header = [con([
             'distance_from_menu': px(18), 'dropdown_divider_border': 'none',
         }, 'pp-nav'),
         con([
-            widget('hfe-search-button', {'layout': 'icon', 'placeholder': 'Search…', 'toggle_color': NAVY, 'toggle_color_hover': BLUE,
-                                         'toggle_icon_size': px(20), 'hide_tablet': 'hidden-tablet', 'hide_mobile': 'hidden-mobile'}, 'pp-hsearch'),
-            con([], 'pp-hdiv', extra={'hide_tablet': 'hidden-tablet', 'hide_mobile': 'hidden-mobile'}),
             button(PHONE, PHONE_TEL, 'pp-hphone pp-btn-lift', size=15, pad=(15, 26), icon=('fas fa-phone-alt', 'fa-solid')),
         ], 'pp-hright', direction='row', gap_=14, align='center'),
     ], 'pp-header-pill', direction='row', justify='space-between', align='center', gap_=20, wrap='nowrap', bg='#FFFFFF', radius=999,
