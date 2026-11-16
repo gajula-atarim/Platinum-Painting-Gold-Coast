@@ -550,3 +550,6 @@ html,body{overflow-x:clip!important}
 
 /* ---------- "Why It Matters": blue brush moved up/left, clear of the heading ---------- */
 @media (min-width:1025px){.pp-deco-why-brush{left:1.5%!important;top:24px!important}}
+
+/* ---------- Before & After: reserve the top-right corner for the paint cans so the paragraph never runs under them ---------- */
+@media (min-width:1025px){.pp-ba-lead{max-width:none!important;padding-right:130px!important}}
