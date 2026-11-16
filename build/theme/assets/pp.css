@@ -518,3 +518,15 @@ html,body{overflow-x:clip!important}
 /* ---------- Hover parity with design: only the hero "Get a Free Quote" button gets the blue glow ---------- */
 .pp-btn-lift3 .elementor-button:hover{box-shadow:none}
 .pp-hero .pp-btn-lift3 .elementor-button:hover{box-shadow:0 12px 24px rgba(19,89,172,.3)}
+
+/* ---------- QA sweep fixes ---------- */
+/* small phones: footer contact text fits on one line; quote-card email wraps only after "@" */
+@media (max-width:400px){
+  .pp-fcontact .elementor-icon-list-text,.pp-fcontact .elementor-icon-list-item{font-size:13.5px!important}
+  .pp-cc-value .elementor-heading-title{overflow-wrap:normal!important}
+}
+/* desktop: decorations clear of headline/paragraph text */
+@media (min-width:1025px){
+  .pp-deco-why-cans{top:24px!important}
+  .pp-ba-lead{max-width:440px!important}
+}

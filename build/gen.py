@@ -457,7 +457,7 @@ quote = con([
             text("<p>Tell us about your project and we'll arrange a free on-site inspection and a written, itemised quote.</p>", 'pp-quote-lead pp-r-up pp-d2', TEXT, family=FIG, size=17, lh=1.6),
             con([
                 contact_card('Call Us', PHONE, PHONE_TEL, ('fas fa-phone-alt', 'fa-solid'), BLUE, 17),
-                contact_card('Email Us', EMAIL, 'mailto:' + EMAIL, ('far fa-envelope', 'fa-regular'), INK, 15),
+                contact_card('Email Us', 'hello@<wbr>platinumpainting.com.au', 'mailto:' + EMAIL, ('far fa-envelope', 'fa-regular'), INK, 15),
             ], 'pp-cc-grid pp-r-up pp-d3', grid={'cols': 2, 'cols_t': 2, 'cols_m': 1, 'gap': 14}),
         ], 'pp-quote-copy', gap_=20, width=50, width_t=100),
         con([widget('shortcode', {'shortcode': '[contact-form-7 id="__CF7_ID__" title="Homepage Quote Form" html_class="pp-cf7"]'})],
