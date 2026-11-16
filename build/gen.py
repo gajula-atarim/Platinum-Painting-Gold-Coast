@@ -523,7 +523,7 @@ footer = [con([
         con([
             con([
                 con([
-                    image('logo_white', 'pp-flogo', link='/'),
+                    widget('image', {'image': media('logo_white'), 'image_size': 'full', 'align': 'left', 'align_tablet': 'left', 'align_mobile': 'left', 'link_to': 'custom', 'link': {'url': '/', 'is_external': '', 'nofollow': ''}}, 'pp-flogo'),
                     text('<p>Painting that protects homes, businesses and strata buildings across the Gold Coast.</p>', 'pp-ftag', GREY, family=FIG, size=15, lh=1.6),
                     widget('social-icons', {
                         'social_icon_list': [
