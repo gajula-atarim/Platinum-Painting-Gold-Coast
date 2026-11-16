@@ -23,6 +23,7 @@ MEDIA = {
     'i_interior': (29, 'pp-icon-interior.webp'), 'i_exterior': (30, 'pp-icon-exterior.webp'), 'i_commercial': (31, 'pp-icon-commercial.webp'),
     'i_strata': (32, 'pp-icon-strata.webp'), 'i_roof': (33, 'pp-icon-roof.webp'), 'i_render': (34, 'pp-icon-render.webp'),
     'i_prep': (35, 'pp-icon-prep.webp'), 'i_coast': (36, 'pp-icon-coast.webp'),
+    'swatches': (67, 'pp-hero-swatches.webp'),
 }
 
 NAVY, BLUE, INK, TEXT, MIST, GREY, BG, LINE = '#0B2B55', '#1359AC', '#0E0E10', '#3A3D42', '#E3ECF7', '#C8CDD3', '#F3F5F8', '#E3E7EC'
@@ -188,8 +189,7 @@ hero_left = con([
 hero_visual = con([
     con([
         con([image('q1', 'pp-cover')], 'pp-q pp-q1 pp-r-tl', overflow='hidden'),
-        html('<div class="pp-rings" aria-hidden="true"><span class="pp-ring pp-ring-1 pp-r-ring pp-d1"></span>'
-             '<span class="pp-ring pp-ring-2 pp-r-ring pp-d3"></span><span class="pp-ring pp-ring-3 pp-r-ring pp-d5"></span></div>', 'pp-q pp-q2'),
+        con([image('swatches', 'pp-cover')], 'pp-q pp-q2 pp-q2-photo pp-r-zoom pp-d1', overflow='hidden'),
         con([image('roller', 'pp-cover')], 'pp-q pp-q3 pp-r-bl pp-d2', overflow='hidden'),
         con([image('q4', 'pp-cover')], 'pp-q pp-q4 pp-r-br pp-d3', overflow='hidden'),
     ], 'pp-quad'),
