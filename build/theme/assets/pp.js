@@ -148,12 +148,14 @@
       var setV = function (pc) { ba.style.setProperty('--pp-ba', pc.toFixed(2) + '%'); ba.setAttribute('aria-valuenow', Math.round(pc)); ba.setAttribute('aria-valuetext', Math.round(pc) + '% before'); };
       ba.setAttribute('aria-valuemin', '0'); ba.setAttribute('aria-valuemax', '100');
       setV(46.7);
-      var set = function (e) { var r = ba.getBoundingClientRect(); setV(Math.max(2, Math.min(98, (e.clientX - r.left) / r.width * 100))); };
+      var cur = function () { return parseFloat(ba.style.getPropertyValue('--pp-ba')) || 46.7; };
+      /* Drag only: a plain click/tap does nothing; dragging moves the split relative to where it is. */
       ba.addEventListener('pointerdown', function (e) {
-        if (editor) return; set(e);
-        var mv = function (ev) { set(ev); };
-        var up = function () { window.removeEventListener('pointermove', mv); window.removeEventListener('pointerup', up); };
-        window.addEventListener('pointermove', mv); window.addEventListener('pointerup', up);
+        if (editor) return;
+        var r = ba.getBoundingClientRect(), x0 = e.clientX, v0 = cur();
+        var mv = function (ev) { setV(Math.max(2, Math.min(98, v0 + (ev.clientX - x0) / r.width * 100))); };
+        var up = function () { window.removeEventListener('pointermove', mv); window.removeEventListener('pointerup', up); window.removeEventListener('pointercancel', up); };
+        window.addEventListener('pointermove', mv); window.addEventListener('pointerup', up); window.addEventListener('pointercancel', up);
       });
       ba.setAttribute('tabindex', '0'); ba.setAttribute('role', 'slider'); ba.setAttribute('aria-label', 'Before and after comparison');
       ba.addEventListener('keydown', function (e) {
