@@ -553,3 +553,20 @@ html,body{overflow-x:clip!important}
 
 /* ---------- Before & After: reserve the top-right corner for the paint cans so the paragraph never runs under them ---------- */
 @media (min-width:1025px){.pp-ba-lead{max-width:none!important;padding-right:130px!important}}
+
+/* ---------- Mobile footer (idea 1): equal CTA buttons, Services + Company side by side, tighter contact rows ---------- */
+@media (max-width:767px){
+.pp-fcta{padding:26px 20px 22px!important;gap:16px!important}
+.pp-fcta>.e-con:last-child{display:grid!important;grid-template-columns:1fr 1fr;gap:10px!important;width:100%!important}
+.pp-fcta .elementor-widget-button,.pp-fcta .elementor-button-wrapper{width:100%!important}
+.pp-fcta .elementor-button{width:100%;display:flex!important;justify-content:center;padding:13px 6px!important;font-size:14px!important;white-space:nowrap}
+.pp-fmain{gap:26px!important;padding-top:28px!important}
+.pp-fgrid{grid-template-columns:1.2fr 1fr!important;column-gap:16px!important;row-gap:26px!important}
+.pp-fgrid>.e-con:first-child,.pp-fgrid>.e-con:last-child{grid-column:1 / -1}
+.pp-fgrid>.e-con{gap:12px!important}
+.pp-fhead{margin-bottom:2px!important}
+.pp-flinks .elementor-icon-list-text{font-size:14px!important}
+.pp-fcontact .elementor-icon-list-icon{width:30px!important;height:30px!important;min-width:30px!important;border-radius:8px!important}
+.pp-fcontact .elementor-icon-list-text{padding-top:0!important}
+.pp-fbottom{flex-direction:row!important;align-items:center!important;justify-content:space-between!important;gap:8px!important;padding-top:16px!important}
+}

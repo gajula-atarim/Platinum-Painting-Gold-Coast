@@ -515,7 +515,7 @@ footer = [con([
                  text('<p>Free on-site inspection and a written, itemised quote.</p>', '', MIST, family=FIG, size=16, lh=1.5)], '', gap_=6),
             con([
                 button('Get a Free Quote', '/contact/', 'pp-btn-lift pp-btn-lift3', bg='#FFFFFF', fg=NAVY, hover_bg='#FFFFFF', hover_fg=NAVY, pad=(15, 28)),
-                button(PHONE, PHONE_TEL, '', bg='rgba(0,0,0,0)', fg='#FFFFFF', hover_bg='#FFFFFF', hover_fg=NAVY, border='#FFFFFF', hover_border='#FFFFFF', pad=(13.5, 26)),
+                button(PHONE, PHONE_TEL, '', bg='rgba(0,0,0,0)', fg='#FFFFFF', hover_bg='#FFFFFF', hover_fg=NAVY, border='#FFFFFF', hover_border='#FFFFFF', pad=(13.5, 26), icon=('fas fa-phone-alt', 'fa-solid')),
             ], '', direction='row', gap_=12, wrap='wrap'),
         ], 'pp-fcta', direction='row', justify='space-between', align='center', wrap='wrap', gap_=24, bg=BLUE,
             pad=dims(48, 56), pad_t=dims(37, 41), pad_m=dims(32, 20)),
